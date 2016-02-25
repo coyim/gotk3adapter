@@ -1,5 +1,7 @@
 package gtki
 
-type InfoBar interface{}
+type InfoBar interface {
+	Box
+}
 
 func AssertInfoBar(_ InfoBar) {}

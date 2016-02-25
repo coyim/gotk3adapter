@@ -1,5 +1,7 @@
 package gtki
 
-type ApplicationWindow interface{}
+type ApplicationWindow interface {
+	Window
+}
 
 func AssertApplicationWindow(_ ApplicationWindow) {}

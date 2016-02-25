@@ -2,6 +2,8 @@ package glibi
 
 type ApplicationFlags int
 
+type SignalHandle uint
+
 type SourceHandle uint
 
 type Type uint

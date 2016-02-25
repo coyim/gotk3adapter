@@ -1,5 +1,9 @@
 package gtki
 
-type ScrolledWindow interface{}
+type ScrolledWindow interface {
+	Bin
+
+	GetVAdjustment() Adjustment
+}
 
 func AssertScrolledWindow(_ ScrolledWindow) {}

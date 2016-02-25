@@ -1,5 +1,7 @@
 package gtki
 
-type MenuBar interface{}
+type MenuBar interface {
+	MenuShell
+}
 
 func AssertMenuBar(_ MenuBar) {}

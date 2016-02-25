@@ -1,5 +1,7 @@
 package gtki
 
-type CheckButton interface{}
+type CheckButton interface {
+	ToggleButton
+}
 
 func AssertCheckButton(_ CheckButton) {}

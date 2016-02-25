@@ -14,6 +14,7 @@ type Gtk interface {
 	BuilderNew() (Builder, error)
 	CellRendererTextNew() (CellRendererText, error)
 	CheckButtonNewWithMnemonic(string) (CheckButton, error)
+	CheckMenuItemNewWithMnemonic(string) (CheckMenuItem, error)
 	CssProviderNew() (CssProvider, error)
 	EntryNew() (Entry, error)
 	FileChooserDialogNewWith2Buttons(string, Window, FileChooserAction, string, ResponseType, string, ResponseType) (FileChooserDialog, error)
@@ -21,6 +22,7 @@ type Gtk interface {
 	LabelNew(string) (Label, error)
 	ListStoreNew(...glibi.Type) (ListStore, error)
 	MenuItemNew() (MenuItem, error)
+	MenuItemNewWithLabel(string) (MenuItem, error)
 	MenuItemNewWithMnemonic(string) (MenuItem, error)
 	MenuNew() (Menu, error)
 	SeparatorMenuItemNew() (SeparatorMenuItem, error)
@@ -28,6 +30,7 @@ type Gtk interface {
 	TextTagNew(string) (TextTag, error)
 	TextTagTableNew() (TextTagTable, error)
 	TextViewNew() (TextView, error)
+	TreePathNew() TreePath
 	WindowSetDefaultIcon(gdki.Pixbuf)
 }
 

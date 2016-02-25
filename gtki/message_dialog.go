@@ -1,5 +1,7 @@
 package gtki
 
-type MessageDialog interface{}
+type MessageDialog interface {
+	Dialog
+}
 
 func AssertMessageDialog(_ MessageDialog) {}

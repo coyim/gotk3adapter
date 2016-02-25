@@ -1,5 +1,7 @@
 package gtki
 
-type CellRendererToggle interface{}
+type CellRendererToggle interface {
+	CellRenderer
+}
 
 func AssertCellRendererToggle(_ CellRendererToggle) {}

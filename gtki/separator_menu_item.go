@@ -1,5 +1,7 @@
 package gtki
 
-type SeparatorMenuItem interface{}
+type SeparatorMenuItem interface {
+	MenuItem
+}
 
 func AssertSeparatorMenuItem(_ SeparatorMenuItem) {}

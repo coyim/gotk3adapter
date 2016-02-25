@@ -1,5 +1,7 @@
 package gtki
 
-type Button interface{}
+type Button interface {
+	Bin
+}
 
 func AssertButton(_ Button) {}
