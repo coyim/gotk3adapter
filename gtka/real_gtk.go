@@ -1,7 +1,9 @@
 package gtka
 
 import (
+	"github.com/gotk3/gotk3/glib"
 	"github.com/gotk3/gotk3/gtk"
+	"github.com/twstrike/gotk3adapter/gdka"
 	"github.com/twstrike/gotk3adapter/gdki"
 	"github.com/twstrike/gotk3adapter/glibi"
 	"github.com/twstrike/gotk3adapter/gtki"
@@ -25,11 +27,11 @@ func (*RealGtk) AcceleratorParse(acc string) (uint, gdki.ModifierType) {
 }
 
 func (*RealGtk) AddProviderForScreen(s gdki.Screen, provider gtki.StyleProvider, prio uint) {
-	gtk.AddProviderForScreen(s, provider, prio)
+	gtk.AddProviderForScreen(gdka.UnwrapScreen(s), unwrapStyleProvider(provider), prio)
 }
 
 func (*RealGtk) ApplicationNew(appId string, flags glibi.ApplicationFlags) (gtki.Application, error) {
-	return wrapApplication(gtk.ApplicationNew(appId, flags))
+	return wrapApplication(gtk.ApplicationNew(appId, glib.ApplicationFlags(flags)))
 }
 
 func (*RealGtk) BuilderNew() (gtki.Builder, error) {
@@ -53,7 +55,7 @@ func (*RealGtk) EntryNew() (gtki.Entry, error) {
 }
 
 func (*RealGtk) FileChooserDialogNewWith2Buttons(title string, parent gtki.Window, action gtki.FileChooserAction, first_button_text string, first_button_id gtki.ResponseType, second_button_text string, second_button_id gtki.ResponseType) (gtki.FileChooserDialog, error) {
-	return wrapFileChooserDialog(gtk.FileChooserDialogNewWith2Buttons(title, parent, action, first_button_text, first_button_id, second_button_text, second_button_id))
+	return wrapFileChooserDialog(gtk.FileChooserDialogNewWith2Buttons(title, unwrapWindow(parent), gtk.FileChooserAction(action), first_button_text, gtk.ResponseType(first_button_id), second_button_text, gtk.ResponseType(second_button_id)))
 }
 
 func (*RealGtk) Init(args *[]string) {
@@ -64,8 +66,16 @@ func (*RealGtk) LabelNew(str string) (gtki.Label, error) {
 	return wrapLabel(gtk.LabelNew(str))
 }
 
+func unwrapTypes(ts []glibi.Type) []glib.Type {
+	result := make([]glib.Type, len(ts))
+	for ix, rr := range ts {
+		result[ix] = glib.Type(rr)
+	}
+	return result
+}
+
 func (*RealGtk) ListStoreNew(types ...glibi.Type) (gtki.ListStore, error) {
-	return wrapListStore(gtk.ListStoreNew(types...))
+	return wrapListStore(gtk.ListStoreNew(unwrapTypes(types)...))
 }
 
 func (*RealGtk) MenuItemNew() (gtki.MenuItem, error) {
@@ -85,7 +95,7 @@ func (*RealGtk) SeparatorMenuItemNew() (gtki.SeparatorMenuItem, error) {
 }
 
 func (*RealGtk) TextBufferNew(table gtki.TextTagTable) (gtki.TextBuffer, error) {
-	return wrapTextBuffer(gtk.TextBufferNew(table))
+	return wrapTextBuffer(gtk.TextBufferNew(unwrapTextTagTable(table)))
 }
 
 func (*RealGtk) TextTagNew(name string) (gtki.TextTag, error) {
@@ -101,5 +111,5 @@ func (*RealGtk) TextViewNew() (gtki.TextView, error) {
 }
 
 func (*RealGtk) WindowSetDefaultIcon(icon gdki.Pixbuf) {
-	gtk.WindowSetDefaultIcon(icon)
+	gtk.WindowSetDefaultIcon(gdka.UnwrapPixbuf(icon))
 }

@@ -1,15 +1,24 @@
 package gdka
 
-import "github.com/gotk3/gotk3/gdk"
+import (
+	"github.com/gotk3/gotk3/gdk"
+	"github.com/twstrike/gotk3adapter/gdki"
+)
 
 type eventButton struct {
 	*gdk.EventButton
 }
 
-func wrapEventAsEventButton(v *event) *eventButton {
-	return wrapEventButton(&gdk.EventButton{v.Event})
+func wrapEventButton(v *gdk.EventButton, e error) (*eventButton, error) {
+	if v == nil {
+		return nil, e
+	}
+	return &eventButton{v}, e
 }
 
-func wrapEventButton(v *gdk.EventButton) *eventButton {
-	return &eventButton{v}
+func unwrapEventButton(v gdki.EventButton) *gdk.EventButton {
+	if v == nil {
+		return nil
+	}
+	return v.(*eventButton).EventButton
 }

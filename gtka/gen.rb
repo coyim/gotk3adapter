@@ -1,8 +1,46 @@
 #!/usr/bin/env ruby
 
 types = %w[
-  AboutDialog
-  AccelGroup
+AboutDialog
+AccelGroup
+Application
+ApplicationWindow
+Box
+Builder
+Button
+CellRendererText
+CellRendererToggle
+CheckButton
+CheckMenuItem
+ComboBox
+ComboBoxText
+CssProvider
+Dialog
+Entry
+FileChooserDialog
+Grid
+InfoBar
+Label
+ListStore
+Menu
+MenuBar
+MenuItem
+MessageDialog
+Notebook
+Revealer
+ScrolledWindow
+SeparatorMenuItem
+TextBuffer
+TextIter
+TextTag
+TextTagTable
+TextView
+TreeIter
+TreePath
+TreeStore
+TreeView
+Widget
+Window
 ]
 
 class String

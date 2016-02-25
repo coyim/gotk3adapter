@@ -9,9 +9,16 @@ type event struct {
 	*gdk.Event
 }
 
-func eventCast(e gdki.Event) *event {
-	if e == nil {
+func wrapEvent(v *gdk.Event, e error) (*event, error) {
+	if v == nil {
+		return nil, e
+	}
+	return &event{v}, e
+}
+
+func unwrapEvent(v gdki.Event) *gdk.Event {
+	if v == nil {
 		return nil
 	}
-	return e.(*event)
+	return v.(*event).Event
 }
