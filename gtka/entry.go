@@ -6,14 +6,19 @@ import (
 )
 
 type entry struct {
+	*widget
 	*gtk.Entry
 }
 
-func wrapEntry(v *gtk.Entry, e error) (*entry, error) {
+func wrapEntrySimple(v *gtk.Entry) *entry {
 	if v == nil {
-		return nil, e
+		return nil
 	}
-	return &entry{v}, e
+	return &entry{wrapWidgetSimple(&v.Widget), v}
+}
+
+func wrapEntry(v *gtk.Entry, e error) (*entry, error) {
+	return wrapEntrySimple(v), e
 }
 
 func unwrapEntry(v gtki.Entry) *gtk.Entry {

@@ -14,11 +14,11 @@ func (*RealGdk) EventButtonFrom(ev gdki.Event) gdki.EventButton {
 }
 
 func (*RealGdk) PixbufLoaderNew() (gdki.PixbufLoader, error) {
-	return gdk.PixbufLoaderNew()
+	return wrapPixbufLoader(gdk.PixbufLoaderNew())
 }
 
 func (*RealGdk) ScreenGetDefault() (gdki.Screen, error) {
-	return gdk.ScreenGetDefault()
+	return wrapScreen(gdk.ScreenGetDefault())
 }
 
 func (*RealGdk) WorkspaceControlSupported() bool {

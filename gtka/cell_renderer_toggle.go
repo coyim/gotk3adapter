@@ -6,14 +6,19 @@ import (
 )
 
 type cellRendererToggle struct {
+	*cellRenderer
 	*gtk.CellRendererToggle
 }
 
-func wrapCellRendererToggle(v *gtk.CellRendererToggle, e error) (*cellRendererToggle, error) {
+func wrapCellRendererToggleSimple(v *gtk.CellRendererToggle) *cellRendererToggle {
 	if v == nil {
-		return nil, e
+		return nil
 	}
-	return &cellRendererToggle{v}, e
+	return &cellRendererToggle{wrapCellRendererSimple(&v.CellRenderer), v}
+}
+
+func wrapCellRendererToggle(v *gtk.CellRendererToggle, e error) (*cellRendererToggle, error) {
+	return wrapCellRendererToggleSimple(v), e
 }
 
 func unwrapCellRendererToggle(v gtki.CellRendererToggle) *gtk.CellRendererToggle {

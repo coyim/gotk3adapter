@@ -6,14 +6,19 @@ import (
 )
 
 type cellRendererText struct {
+	*cellRenderer
 	*gtk.CellRendererText
 }
 
-func wrapCellRendererText(v *gtk.CellRendererText, e error) (*cellRendererText, error) {
+func wrapCellRendererTextSimple(v *gtk.CellRendererText) *cellRendererText {
 	if v == nil {
-		return nil, e
+		return nil
 	}
-	return &cellRendererText{v}, e
+	return &cellRendererText{wrapCellRendererSimple(&v.CellRenderer), v}
+}
+
+func wrapCellRendererText(v *gtk.CellRendererText, e error) (*cellRendererText, error) {
+	return wrapCellRendererTextSimple(v), e
 }
 
 func unwrapCellRendererText(v gtki.CellRendererText) *gtk.CellRendererText {

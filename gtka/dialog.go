@@ -6,14 +6,19 @@ import (
 )
 
 type dialog struct {
+	*window
 	*gtk.Dialog
 }
 
-func wrapDialog(v *gtk.Dialog, e error) (*dialog, error) {
+func wrapDialogSimple(v *gtk.Dialog) *dialog {
 	if v == nil {
-		return nil, e
+		return nil
 	}
-	return &dialog{v}, e
+	return &dialog{wrapWindowSimple(&v.Window), v}
+}
+
+func wrapDialog(v *gtk.Dialog, e error) (*dialog, error) {
+	return wrapDialogSimple(v), e
 }
 
 func unwrapDialog(v gtki.Dialog) *gtk.Dialog {
@@ -22,3 +27,7 @@ func unwrapDialog(v gtki.Dialog) *gtk.Dialog {
 	}
 	return v.(*dialog).Dialog
 }
+
+// TODO:
+// Run() int
+// SetDefaultResponse(ResponseType)

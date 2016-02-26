@@ -6,14 +6,19 @@ import (
 )
 
 type accelGroup struct {
+	*gliba.Object
 	*gtk.AccelGroup
 }
 
-func wrapAccelGroup(v *gtk.AccelGroup, e error) (*accelGroup, error) {
+func wrapAccelGroupSimple(v *gtk.AccelGroup) *accelGroup {
 	if v == nil {
-		return nil, e
+		return nil
 	}
-	return &accelGroup{v}, e
+	return &accelGroup{gliba.WrapObjectSimple(&v.Object), v}
+}
+
+func wrapAccelGroup(v *gtk.AccelGroup, e error) (*accelGroup, error) {
+	return wrapAccelGroupSimple(v), e
 }
 
 func unwrapAccelGroup(v gtki.AccelGroup) *gtk.AccelGroup {

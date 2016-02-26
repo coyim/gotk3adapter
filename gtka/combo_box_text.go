@@ -6,14 +6,19 @@ import (
 )
 
 type comboBoxText struct {
+	*comboBox
 	*gtk.ComboBoxText
 }
 
-func wrapComboBoxText(v *gtk.ComboBoxText, e error) (*comboBoxText, error) {
+func wrapComboBoxTextSimple(v *gtk.ComboBoxText) *comboBoxText {
 	if v == nil {
-		return nil, e
+		return nil
 	}
-	return &comboBoxText{v}, e
+	return &comboBoxText{wrapComboBoxSimple(&v.ComboBox), v}
+}
+
+func wrapComboBoxText(v *gtk.ComboBoxText, e error) (*comboBoxText, error) {
+	return wrapComboBoxTextSimple(v), e
 }
 
 func unwrapComboBoxText(v gtki.ComboBoxText) *gtk.ComboBoxText {

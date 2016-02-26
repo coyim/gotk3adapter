@@ -6,14 +6,19 @@ import (
 )
 
 type box struct {
+	*container
 	*gtk.Box
 }
 
-func wrapBox(v *gtk.Box, e error) (*box, error) {
+func wrapBoxSimple(v *gtk.Box) *box {
 	if v == nil {
-		return nil, e
+		return nil
 	}
-	return &box{v}, e
+	return &box{wrapContainerSimple(&v.Container), v}
+}
+
+func wrapBox(v *gtk.Box, e error) (*box, error) {
+	return wrapBoxSimple(v), e
 }
 
 func unwrapBox(v gtki.Box) *gtk.Box {

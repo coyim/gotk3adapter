@@ -6,14 +6,19 @@ import (
 )
 
 type applicationWindow struct {
+	*window
 	*gtk.ApplicationWindow
 }
 
-func wrapApplicationWindow(v *gtk.ApplicationWindow, e error) (*applicationWindow, error) {
+func wrapApplicationWindowSimple(v *gtk.ApplicationWindow) *applicationWindow {
 	if v == nil {
-		return nil, e
+		return nil
 	}
-	return &applicationWindow{v}, e
+	return &applicationWindow{wrapObjectSimple(&v.Window), v}
+}
+
+func wrapApplicationWindow(v *gtk.ApplicationWindow, e error) (*applicationWindow, error) {
+	return wrapApplicationWindowSimple(v), e
 }
 
 func unwrapApplicationWindow(v gtki.ApplicationWindow) *gtk.ApplicationWindow {

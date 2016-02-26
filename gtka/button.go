@@ -6,14 +6,19 @@ import (
 )
 
 type button struct {
+	*bin
 	*gtk.Button
 }
 
-func wrapButton(v *gtk.Button, e error) (*button, error) {
+func wrapButtonSimple(v *gtk.Button) *button {
 	if v == nil {
-		return nil, e
+		return nil
 	}
-	return &button{v}, e
+	return &button{wrapBinSimple(&v.Bin), v}
+}
+
+func wrapButton(v *gtk.Button, e error) (*button, error) {
+	return wrapButtonSimple(v), e
 }
 
 func unwrapButton(v gtki.Button) *gtk.Button {

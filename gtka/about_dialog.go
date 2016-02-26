@@ -6,6 +6,7 @@ import (
 )
 
 type aboutDialog struct {
+	*dialog
 	*gtk.AboutDialog
 }
 
@@ -13,7 +14,7 @@ func wrapAboutDialog(v *gtk.AboutDialog, e error) (*aboutDialog, error) {
 	if v == nil {
 		return nil, e
 	}
-	return &aboutDialog{v}, e
+	return &aboutDialog{wrapDialogSimple(&v.Dialog), v}, e
 }
 
 func unwrapAboutDialog(v gtki.AboutDialog) *gtk.AboutDialog {

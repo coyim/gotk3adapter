@@ -6,14 +6,19 @@ import (
 )
 
 type checkButton struct {
+	*toggleButton
 	*gtk.CheckButton
 }
 
-func wrapCheckButton(v *gtk.CheckButton, e error) (*checkButton, error) {
+func wrapCheckButtonSimple(v *gtk.CheckButton) *checkButton {
 	if v == nil {
-		return nil, e
+		return nil
 	}
-	return &checkButton{v}, e
+	return &checkButton{wrapToggleButton(&v.ToggleButton), v}
+}
+
+func wrapCheckButton(v *gtk.CheckButton, e error) (*checkButton, error) {
+	return wrapCheckButtonSimple(v), e
 }
 
 func unwrapCheckButton(v gtki.CheckButton) *gtk.CheckButton {

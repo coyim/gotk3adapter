@@ -6,14 +6,19 @@ import (
 )
 
 type cssProvider struct {
+	*gliba.Object
 	*gtk.CssProvider
 }
 
-func wrapCssProvider(v *gtk.CssProvider, e error) (*cssProvider, error) {
+func wrapCssProviderSimple(v *gtk.CssProvider) *cssProvider {
 	if v == nil {
-		return nil, e
+		return nil
 	}
-	return &cssProvider{v}, e
+	return &cssProvider{gliba.WrapObjectSimple(&v.Object), v}
+}
+
+func wrapCssProvider(v *gtk.CssProvider, e error) (*cssProvider, error) {
+	return wrapCssProviderSimple(v), e
 }
 
 func unwrapCssProvider(v gtki.CssProvider) *gtk.CssProvider {

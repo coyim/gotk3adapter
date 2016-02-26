@@ -6,14 +6,19 @@ import (
 )
 
 type builder struct {
+	*gliba.Object
 	*gtk.Builder
 }
 
-func wrapBuilder(v *gtk.Builder, e error) (*builder, error) {
+func wrapBuilderSimple(v *gtk.Builder) *builder {
 	if v == nil {
-		return nil, e
+		return nil
 	}
-	return &builder{v}, e
+	return &builder{gliba.WrapObjectSimple(&v.Object), v}
+}
+
+func wrapBuilder(v *gtk.Builder, e error) (*builder, error) {
+	return wrapBuilderSimple(v), e
 }
 
 func unwrapBuilder(v gtki.Builder) *gtk.Builder {

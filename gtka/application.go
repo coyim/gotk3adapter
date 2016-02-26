@@ -6,14 +6,19 @@ import (
 )
 
 type application struct {
+	*gliba.Application
 	*gtk.Application
 }
 
-func wrapApplication(v *gtk.Application, e error) (*application, error) {
+func wrapApplicationSimple(v *gtk.Application) *application {
 	if v == nil {
-		return nil, e
+		return nil
 	}
-	return &application{v}, e
+	return &application{gliba.WrapApplicationSimple(&v.Application), v}
+}
+
+func wrapApplication(v *gtk.Application, e error) (*application, error) {
+	return wrapApplicationSimple(v), e
 }
 
 func unwrapApplication(v gtki.Application) *gtk.Application {

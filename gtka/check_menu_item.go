@@ -6,14 +6,19 @@ import (
 )
 
 type checkMenuItem struct {
+	*menuItem
 	*gtk.CheckMenuItem
 }
 
-func wrapCheckMenuItem(v *gtk.CheckMenuItem, e error) (*checkMenuItem, error) {
+func wrapCheckMenuItemSimple(v *gtk.CheckMenuItem) *checkMenuItem {
 	if v == nil {
-		return nil, e
+		return nil
 	}
-	return &checkMenuItem{v}, e
+	return &checkMenuItem{wrapMenuItem(&v.MenuItem), v}
+}
+
+func wrapCheckMenuItem(v *gtk.CheckMenuItem, e error) (*checkMenuItem, error) {
+	return wrapCheckMenuItemSimple(v), e
 }
 
 func unwrapCheckMenuItem(v gtki.CheckMenuItem) *gtk.CheckMenuItem {
