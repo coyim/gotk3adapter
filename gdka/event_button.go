@@ -9,11 +9,15 @@ type eventButton struct {
 	*gdk.EventButton
 }
 
-func wrapEventButton(v *gdk.EventButton, e error) (*eventButton, error) {
+func wrapEventButtonSimple(v *gdk.EventButton) *eventButton {
 	if v == nil {
-		return nil, e
+		return nil
 	}
-	return &eventButton{v}, e
+	return &eventButton{v}
+}
+
+func wrapEventButton(v *gdk.EventButton, e error) (*eventButton, error) {
+	return wrapEventButtonSimple(v), e
 }
 
 func unwrapEventButton(v gdki.EventButton) *gdk.EventButton {

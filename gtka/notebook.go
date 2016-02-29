@@ -57,9 +57,8 @@ func (v *notebook) AppendPage(v1, v2 gtki.Widget) int {
 }
 
 func (v *notebook) GetNthPage(v1 int) (gtki.Widget, error) {
-	// TODO: make sure this is actually correct
-	//	return wrapWidget(v.internal.GetNthPage(v1))
-	return nil, nil
+	vx1, vx2 := v.internal.GetNthPage(v1)
+	return Wrap(vx1).(gtki.Widget), vx2
 }
 
 func (v *notebook) SetTabLabelText(v1 gtki.Widget, v2 string) {

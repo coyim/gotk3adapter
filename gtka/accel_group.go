@@ -32,6 +32,5 @@ func unwrapAccelGroup(v gtki.AccelGroup) *gtk.AccelGroup {
 }
 
 func (v *accelGroup) Connect2(v2 uint, v3 gdki.ModifierType, v4 gtki.AccelFlags, v5 interface{}) {
-	// TODO: fix up the v5 argument here
-	v.internal.Connect(v2, gdk.ModifierType(v3), gtk.AccelFlags(v4), v5)
+	v.internal.Connect(v2, gdk.ModifierType(v3), gtk.AccelFlags(v4), gliba.FixupFunction(v5))
 }

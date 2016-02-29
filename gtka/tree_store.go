@@ -48,8 +48,7 @@ func (v *treeStore) GetPath(v1 gtki.TreeIter) (gtki.TreePath, error) {
 }
 
 func (v *treeStore) GetValue(v1 gtki.TreeIter, v2 int) (glibi.Value, error) {
-	// TODO: fix value here
-	return nil, nil
+	return gliba.WrapValue(v.internal.GetValue(unwrapTreeIter(v1), v2))
 }
 
 func (v *treeStore) IterNext(v1 gtki.TreeIter) bool {
@@ -65,6 +64,5 @@ func (v *treeStore) Clear() {
 }
 
 func (v *treeStore) SetValue(v1 gtki.TreeIter, v2 int, v3 interface{}) error {
-	// TODO: fix the value here
-	return v.internal.SetValue(unwrapTreeIter(v1), v2, v3)
+	return v.internal.SetValue(unwrapTreeIter(v1), v2, gliba.UnwrapAllGuard(v3))
 }

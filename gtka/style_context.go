@@ -38,6 +38,6 @@ func (v *styleContext) AddProvider(v1 gtki.StyleProvider, v2 uint) {
 }
 
 func (v *styleContext) GetProperty2(v1 string, v2 gtki.StateFlags) (interface{}, error) {
-	// TODO: make this work with values
-	return nil, nil
+	vx1, vx2 := v.internal.GetProperty(v1, gtk.StateFlags(v2))
+	return gliba.WrapAllGuard(vx1), vx2
 }

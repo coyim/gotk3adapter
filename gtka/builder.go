@@ -35,12 +35,14 @@ func (v *builder) AddFromString(v1 string) error {
 }
 
 func (v *builder) GetObject(v1 string) (glibi.Object, error) {
-	// TODO: make sure this really works
-	// return v.internal.GetObject(v1)
-	return nil, nil
+	vx1, vx2 := v.internal.GetObject(v1)
+	return Wrap(vx1).(glibi.Object), vx2
 }
 
 func (v *builder) ConnectSignals(v1 map[string]interface{}) {
-	// TODO: make sure this really works
-	// return v.internal.ConnectSignals(v1)
+	newSignals := make(map[string]interface{})
+	for k, vv := range v1 {
+		newSignals[k] = gliba.FixupFunction(vv)
+	}
+	v.internal.ConnectSignals(newSignals)
 }

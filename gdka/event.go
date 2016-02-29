@@ -9,11 +9,15 @@ type event struct {
 	*gdk.Event
 }
 
-func wrapEvent(v *gdk.Event, e error) (*event, error) {
+func wrapEventSimple(v *gdk.Event) *event {
 	if v == nil {
-		return nil, e
+		return nil
 	}
-	return &event{v}, e
+	return &event{v}
+}
+
+func wrapEvent(v *gdk.Event, e error) (*event, error) {
+	return wrapEventSimple(v), e
 }
 
 func unwrapEvent(v gdki.Event) *gdk.Event {

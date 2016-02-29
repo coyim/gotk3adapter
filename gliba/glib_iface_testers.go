@@ -7,4 +7,5 @@ func init() {
 	glibi.AssertApplication(&Application{})
 	glibi.AssertObject(&Object{})
 	glibi.AssertSignal(&signal{})
+	glibi.AssertValue(&value{})
 }
