@@ -6,19 +6,28 @@ import (
 )
 
 type scrolledWindow struct {
-	*gtk.ScrolledWindow
+	*bin
+	internal *gtk.ScrolledWindow
+}
+
+func wrapScrolledWindowSimple(v *gtk.ScrolledWindow) *scrolledWindow {
+	if v == nil {
+		return nil
+	}
+	return &scrolledWindow{wrapBinSimple(&v.Bin), v}
 }
 
 func wrapScrolledWindow(v *gtk.ScrolledWindow, e error) (*scrolledWindow, error) {
-	if v == nil {
-		return nil, e
-	}
-	return &scrolledWindow{v}, e
+	return wrapScrolledWindowSimple(v), e
 }
 
 func unwrapScrolledWindow(v gtki.ScrolledWindow) *gtk.ScrolledWindow {
 	if v == nil {
 		return nil
 	}
-	return v.(*scrolledWindow).ScrolledWindow
+	return v.(*scrolledWindow).internal
+}
+
+func (v *scrolledWindow) GetVAdjustment() gtki.Adjustment {
+	return wrapAdjustmentSimple(v.internal.GetVAdjustment())
 }

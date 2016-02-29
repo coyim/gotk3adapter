@@ -6,19 +6,24 @@ import (
 )
 
 type messageDialog struct {
-	*gtk.MessageDialog
+	*dialog
+	internal *gtk.MessageDialog
+}
+
+func wrapMessageDialogSimple(v *gtk.MessageDialog) *messageDialog {
+	if v == nil {
+		return nil
+	}
+	return &messageDialog{wrapDialogSimple(&v.Dialog), v}
 }
 
 func wrapMessageDialog(v *gtk.MessageDialog, e error) (*messageDialog, error) {
-	if v == nil {
-		return nil, e
-	}
-	return &messageDialog{v}, e
+	return wrapMessageDialogSimple(v), e
 }
 
 func unwrapMessageDialog(v gtki.MessageDialog) *gtk.MessageDialog {
 	if v == nil {
 		return nil
 	}
-	return v.(*messageDialog).MessageDialog
+	return v.(*messageDialog).internal
 }

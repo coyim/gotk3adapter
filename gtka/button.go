@@ -7,7 +7,7 @@ import (
 
 type button struct {
 	*bin
-	*gtk.Button
+	internal *gtk.Button
 }
 
 func wrapButtonSimple(v *gtk.Button) *button {
@@ -25,5 +25,5 @@ func unwrapButton(v gtki.Button) *gtk.Button {
 	if v == nil {
 		return nil
 	}
-	return v.(*button).Button
+	return v.(*button).internal
 }

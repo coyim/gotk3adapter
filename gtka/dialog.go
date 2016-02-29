@@ -7,7 +7,7 @@ import (
 
 type dialog struct {
 	*window
-	*gtk.Dialog
+	internal *gtk.Dialog
 }
 
 func wrapDialogSimple(v *gtk.Dialog) *dialog {
@@ -25,9 +25,13 @@ func unwrapDialog(v gtki.Dialog) *gtk.Dialog {
 	if v == nil {
 		return nil
 	}
-	return v.(*dialog).Dialog
+	return v.(*dialog).internal
 }
 
-// TODO:
-// Run() int
-// SetDefaultResponse(ResponseType)
+func (v *dialog) Run() int {
+	return v.internal.Run()
+}
+
+func (v *dialog) SetDefaultResponse(v1 gtki.ResponseType) {
+	v.internal.SetDefaultResponse(gtk.ResponseType(v1))
+}

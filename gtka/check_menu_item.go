@@ -7,14 +7,14 @@ import (
 
 type checkMenuItem struct {
 	*menuItem
-	*gtk.CheckMenuItem
+	internal *gtk.CheckMenuItem
 }
 
 func wrapCheckMenuItemSimple(v *gtk.CheckMenuItem) *checkMenuItem {
 	if v == nil {
 		return nil
 	}
-	return &checkMenuItem{wrapMenuItem(&v.MenuItem), v}
+	return &checkMenuItem{wrapMenuItemSimple(&v.MenuItem), v}
 }
 
 func wrapCheckMenuItem(v *gtk.CheckMenuItem, e error) (*checkMenuItem, error) {
@@ -25,5 +25,13 @@ func unwrapCheckMenuItem(v gtki.CheckMenuItem) *gtk.CheckMenuItem {
 	if v == nil {
 		return nil
 	}
-	return v.(*checkMenuItem).CheckMenuItem
+	return v.(*checkMenuItem).internal
+}
+
+func (v *checkMenuItem) GetActive() bool {
+	return v.internal.GetActive()
+}
+
+func (v *checkMenuItem) SetActive(v1 bool) {
+	v.internal.SetActive(v1)
 }

@@ -7,14 +7,14 @@ import (
 
 type comboBox struct {
 	*bin
-	*gtk.ComboBox
+	internal *gtk.ComboBox
 }
 
 func wrapComboBoxSimple(v *gtk.ComboBox) *comboBox {
 	if v == nil {
 		return nil
 	}
-	return &comboBox{wrapBin(&v.Bin), v}
+	return &comboBox{wrapBinSimple(&v.Bin), v}
 }
 
 func wrapComboBox(v *gtk.ComboBox, e error) (*comboBox, error) {
@@ -25,5 +25,25 @@ func unwrapComboBox(v gtki.ComboBox) *gtk.ComboBox {
 	if v == nil {
 		return nil
 	}
-	return v.(*comboBox).ComboBox
+	return v.(*comboBox).internal
+}
+
+func (v *comboBox) GetActiveIter() (gtki.TreeIter, error) {
+	return wrapTreeIter(v.internal.GetActiveIter())
+}
+
+func (v *comboBox) SetActive(v1 int) {
+	v.internal.SetActive(v1)
+}
+
+func (v *comboBox) SetModel(v1 gtki.TreeModel) {
+	v.internal.SetModel(unwrapTreeModel(v1))
+}
+
+func (v *comboBox) AddAttribute(v1 gtki.CellRenderer, v2 string, v3 int) {
+	v.internal.AddAttribute(unwrapCellRenderer(v1), v2, v3)
+}
+
+func (v *comboBox) PackStart(v1 gtki.CellRenderer, v2 bool) {
+	v.internal.PackStart(unwrapCellRenderer(v1), v2)
 }

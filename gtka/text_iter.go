@@ -9,11 +9,15 @@ type textIter struct {
 	*gtk.TextIter
 }
 
-func wrapTextIter(v *gtk.TextIter, e error) (*textIter, error) {
+func wrapTextIterSimple(v *gtk.TextIter) *textIter {
 	if v == nil {
-		return nil, e
+		return nil
 	}
-	return &textIter{v}, e
+	return &textIter{v}
+}
+
+func wrapTextIter(v *gtk.TextIter, e error) (*textIter, error) {
+	return wrapTextIterSimple(v), e
 }
 
 func unwrapTextIter(v gtki.TextIter) *gtk.TextIter {

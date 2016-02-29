@@ -9,7 +9,7 @@ import (
 
 type window struct {
 	*bin
-	*gtk.Window
+	internal *gtk.Window
 }
 
 func wrapWindowSimple(v *gtk.Window) *window {
@@ -27,25 +27,37 @@ func unwrapWindow(v gtki.Window) *gtk.Window {
 	if v == nil {
 		return nil
 	}
-	return v.(*window).Window
+	return v.(*window).internal
 }
 
 func (v *window) AddAccelGroup(v2 gtki.AccelGroup) {
-	v.Window.AddAccelGroup(unwrapAccelGroup(v2))
+	v.internal.AddAccelGroup(unwrapAccelGroup(v2))
+}
+
+func (v *window) IsActive() bool {
+	return v.internal.IsActive()
+}
+
+func (v *window) Resize(v1, v2 int) {
+	v.internal.Resize(v1, v2)
 }
 
 func (v *window) SetApplication(v2 gtki.Application) {
-	v.Window.SetApplication(unwrapApplication(v2))
+	v.internal.SetApplication(unwrapApplication(v2))
 }
 
 func (v *window) SetIcon(v2 gdki.Pixbuf) {
-	v.Window.SetIcon(gdka.UnwrapPixbuf(v2))
+	v.internal.SetIcon(gdka.UnwrapPixbuf(v2))
+}
+
+func (v *window) SetTitle(v1 string) {
+	v.internal.SetTitle(v1)
 }
 
 func (v *window) SetTitlebar(v2 gtki.Widget) {
-	v.Window.SetTitlebar(unwrapWidget(v2))
+	v.internal.SetTitlebar(unwrapWidget(v2))
 }
 
 func (v *window) SetTransientFor(v2 gtki.Window) {
-	v.Window.SetTransientFor(unwrapWindow(v2))
+	v.internal.SetTransientFor(unwrapWindow(v2))
 }

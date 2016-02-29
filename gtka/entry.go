@@ -7,7 +7,7 @@ import (
 
 type entry struct {
 	*widget
-	*gtk.Entry
+	internal *gtk.Entry
 }
 
 func wrapEntrySimple(v *gtk.Entry) *entry {
@@ -25,5 +25,25 @@ func unwrapEntry(v gtki.Entry) *gtk.Entry {
 	if v == nil {
 		return nil
 	}
-	return v.(*entry).Entry
+	return v.(*entry).internal
+}
+
+func (v *entry) GetText() (string, error) {
+	return v.internal.GetText()
+}
+
+func (v *entry) SetHasFrame(v1 bool) {
+	v.internal.SetHasFrame(v1)
+}
+
+func (v *entry) SetVisibility(v1 bool) {
+	v.internal.SetVisibility(v1)
+}
+
+func (v *entry) SetText(v1 string) {
+	v.internal.SetText(v1)
+}
+
+func (v *entry) SetEditable(v1 bool) {
+	v.internal.SetEditable(v1)
 }

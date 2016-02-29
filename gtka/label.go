@@ -6,19 +6,36 @@ import (
 )
 
 type label struct {
-	*gtk.Label
+	*widget
+	internal *gtk.Label
+}
+
+func wrapLabelSimple(v *gtk.Label) *label {
+	if v == nil {
+		return nil
+	}
+	return &label{wrapWidgetSimple(&v.Widget), v}
 }
 
 func wrapLabel(v *gtk.Label, e error) (*label, error) {
-	if v == nil {
-		return nil, e
-	}
-	return &label{v}, e
+	return wrapLabelSimple(v), e
 }
 
 func unwrapLabel(v gtki.Label) *gtk.Label {
 	if v == nil {
 		return nil
 	}
-	return v.(*label).Label
+	return v.(*label).internal
+}
+
+func (v *label) SetLabel(v1 string) {
+	v.internal.SetLabel(v1)
+}
+
+func (v *label) SetText(v1 string) {
+	v.internal.SetText(v1)
+}
+
+func (v *label) SetSelectable(v1 bool) {
+	v.internal.SetSelectable(v1)
 }

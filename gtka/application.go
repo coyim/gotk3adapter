@@ -2,12 +2,13 @@ package gtka
 
 import (
 	"github.com/gotk3/gotk3/gtk"
+	"github.com/twstrike/gotk3adapter/gliba"
 	"github.com/twstrike/gotk3adapter/gtki"
 )
 
 type application struct {
 	*gliba.Application
-	*gtk.Application
+	internal *gtk.Application
 }
 
 func wrapApplicationSimple(v *gtk.Application) *application {
@@ -25,5 +26,5 @@ func unwrapApplication(v gtki.Application) *gtk.Application {
 	if v == nil {
 		return nil
 	}
-	return v.(*application).Application
+	return v.(*application).internal
 }

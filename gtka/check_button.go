@@ -7,14 +7,14 @@ import (
 
 type checkButton struct {
 	*toggleButton
-	*gtk.CheckButton
+	internal *gtk.CheckButton
 }
 
 func wrapCheckButtonSimple(v *gtk.CheckButton) *checkButton {
 	if v == nil {
 		return nil
 	}
-	return &checkButton{wrapToggleButton(&v.ToggleButton), v}
+	return &checkButton{wrapToggleButtonSimple(&v.ToggleButton), v}
 }
 
 func wrapCheckButton(v *gtk.CheckButton, e error) (*checkButton, error) {
@@ -25,5 +25,5 @@ func unwrapCheckButton(v gtki.CheckButton) *gtk.CheckButton {
 	if v == nil {
 		return nil
 	}
-	return v.(*checkButton).CheckButton
+	return v.(*checkButton).internal
 }

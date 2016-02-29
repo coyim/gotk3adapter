@@ -6,19 +6,28 @@ import (
 )
 
 type menu struct {
-	*gtk.Menu
+	*menuShell
+	internal *gtk.Menu
+}
+
+func wrapMenuSimple(v *gtk.Menu) *menu {
+	if v == nil {
+		return nil
+	}
+	return &menu{wrapMenuShellSimple(&v.MenuShell), v}
 }
 
 func wrapMenu(v *gtk.Menu, e error) (*menu, error) {
-	if v == nil {
-		return nil, e
-	}
-	return &menu{v}, e
+	return wrapMenuSimple(v), e
 }
 
 func unwrapMenu(v gtki.Menu) *gtk.Menu {
 	if v == nil {
 		return nil
 	}
-	return v.(*menu).Menu
+	return v.(*menu).internal
+}
+
+func (v *menu) PopupAtMouseCursor(v1 gtki.Menu, v2 gtki.MenuItem, v3 int, v4 uint32) {
+	v.internal.PopupAtMouseCursor(unwrapMenu(v1), unwrapMenuItem(v2), v3, v4)
 }

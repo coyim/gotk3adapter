@@ -9,4 +9,5 @@ func init() {
 	gdki.AssertPixbuf(&pixbuf{})
 	gdki.AssertPixbufLoader(&pixbufLoader{})
 	gdki.AssertScreen(&screen{})
+	gdki.AssertWindow(&window{})
 }

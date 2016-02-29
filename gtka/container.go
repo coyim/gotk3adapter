@@ -28,6 +28,10 @@ func unwrapContainer(v gtki.Container) *gtk.Container {
 	return v.(*container).Container
 }
 
-// TODO:
-// Add(Widget)
-// Remove(Widget)
+func (v *container) Add(v2 gtki.Widget) {
+	v.Container.Add(unwrapWidget(v2))
+}
+
+func (v *container) Remove(v2 gtki.Widget) {
+	v.Container.Remove(unwrapWidget(v2))
+}

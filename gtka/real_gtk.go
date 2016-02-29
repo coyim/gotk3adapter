@@ -46,6 +46,10 @@ func (*RealGtk) CheckButtonNewWithMnemonic(label string) (gtki.CheckButton, erro
 	return wrapCheckButton(gtk.CheckButtonNewWithMnemonic(label))
 }
 
+func (*RealGtk) CheckMenuItemNewWithMnemonic(label string) (gtki.CheckMenuItem, error) {
+	return wrapCheckMenuItem(gtk.CheckMenuItemNewWithMnemonic(label))
+}
+
 func (*RealGtk) CssProviderNew() (gtki.CssProvider, error) {
 	return wrapCssProvider(gtk.CssProviderNew())
 }
@@ -86,6 +90,10 @@ func (*RealGtk) MenuItemNewWithMnemonic(label string) (gtki.MenuItem, error) {
 	return wrapMenuItem(gtk.MenuItemNewWithMnemonic(label))
 }
 
+func (*RealGtk) MenuItemNewWithLabel(label string) (gtki.MenuItem, error) {
+	return wrapMenuItem(gtk.MenuItemNewWithLabel(label))
+}
+
 func (*RealGtk) MenuNew() (gtki.Menu, error) {
 	return wrapMenu(gtk.MenuNew())
 }
@@ -108,6 +116,11 @@ func (*RealGtk) TextTagTableNew() (gtki.TextTagTable, error) {
 
 func (*RealGtk) TextViewNew() (gtki.TextView, error) {
 	return wrapTextView(gtk.TextViewNew())
+}
+
+func (*RealGtk) TreePathNew() gtki.TreePath {
+	var tp gtk.TreePath
+	return wrapTreePathSimple(&tp)
 }
 
 func (*RealGtk) WindowSetDefaultIcon(icon gdki.Pixbuf) {

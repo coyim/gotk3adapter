@@ -1,20 +1,23 @@
 package gtka
 
 import (
+	"github.com/gotk3/gotk3/gdk"
 	"github.com/gotk3/gotk3/gtk"
+	"github.com/twstrike/gotk3adapter/gdki"
+	"github.com/twstrike/gotk3adapter/gliba"
 	"github.com/twstrike/gotk3adapter/gtki"
 )
 
 type accelGroup struct {
 	*gliba.Object
-	*gtk.AccelGroup
+	internal *gtk.AccelGroup
 }
 
 func wrapAccelGroupSimple(v *gtk.AccelGroup) *accelGroup {
 	if v == nil {
 		return nil
 	}
-	return &accelGroup{gliba.WrapObjectSimple(&v.Object), v}
+	return &accelGroup{gliba.WrapObjectSimple(v.Object), v}
 }
 
 func wrapAccelGroup(v *gtk.AccelGroup, e error) (*accelGroup, error) {
@@ -25,5 +28,10 @@ func unwrapAccelGroup(v gtki.AccelGroup) *gtk.AccelGroup {
 	if v == nil {
 		return nil
 	}
-	return v.(*accelGroup).AccelGroup
+	return v.(*accelGroup).internal
+}
+
+func (v *accelGroup) Connect2(v2 uint, v3 gdki.ModifierType, v4 gtki.AccelFlags, v5 interface{}) {
+	// TODO: fix up the v5 argument here
+	v.internal.Connect(v2, gdk.ModifierType(v3), gtk.AccelFlags(v4), v5)
 }

@@ -6,19 +6,24 @@ import (
 )
 
 type separatorMenuItem struct {
-	*gtk.SeparatorMenuItem
+	*menuItem
+	internal *gtk.SeparatorMenuItem
+}
+
+func wrapSeparatorMenuItemSimple(v *gtk.SeparatorMenuItem) *separatorMenuItem {
+	if v == nil {
+		return nil
+	}
+	return &separatorMenuItem{wrapMenuItemSimple(&v.MenuItem), v}
 }
 
 func wrapSeparatorMenuItem(v *gtk.SeparatorMenuItem, e error) (*separatorMenuItem, error) {
-	if v == nil {
-		return nil, e
-	}
-	return &separatorMenuItem{v}, e
+	return wrapSeparatorMenuItemSimple(v), e
 }
 
 func unwrapSeparatorMenuItem(v gtki.SeparatorMenuItem) *gtk.SeparatorMenuItem {
 	if v == nil {
 		return nil
 	}
-	return v.(*separatorMenuItem).SeparatorMenuItem
+	return v.(*separatorMenuItem).internal
 }

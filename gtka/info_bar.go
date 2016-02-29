@@ -6,19 +6,24 @@ import (
 )
 
 type infoBar struct {
-	*gtk.InfoBar
+	*box
+	internal *gtk.InfoBar
+}
+
+func wrapInfoBarSimple(v *gtk.InfoBar) *infoBar {
+	if v == nil {
+		return nil
+	}
+	return &infoBar{wrapBoxSimple(&v.Box), v}
 }
 
 func wrapInfoBar(v *gtk.InfoBar, e error) (*infoBar, error) {
-	if v == nil {
-		return nil, e
-	}
-	return &infoBar{v}, e
+	return wrapInfoBarSimple(v), e
 }
 
 func unwrapInfoBar(v gtki.InfoBar) *gtk.InfoBar {
 	if v == nil {
 		return nil
 	}
-	return v.(*infoBar).InfoBar
+	return v.(*infoBar).internal
 }

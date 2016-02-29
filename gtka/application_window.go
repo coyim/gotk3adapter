@@ -7,14 +7,14 @@ import (
 
 type applicationWindow struct {
 	*window
-	*gtk.ApplicationWindow
+	internal *gtk.ApplicationWindow
 }
 
 func wrapApplicationWindowSimple(v *gtk.ApplicationWindow) *applicationWindow {
 	if v == nil {
 		return nil
 	}
-	return &applicationWindow{wrapObjectSimple(&v.Window), v}
+	return &applicationWindow{wrapWindowSimple(&v.Window), v}
 }
 
 func wrapApplicationWindow(v *gtk.ApplicationWindow, e error) (*applicationWindow, error) {
@@ -25,5 +25,5 @@ func unwrapApplicationWindow(v gtki.ApplicationWindow) *gtk.ApplicationWindow {
 	if v == nil {
 		return nil
 	}
-	return v.(*applicationWindow).ApplicationWindow
+	return v.(*applicationWindow).internal
 }

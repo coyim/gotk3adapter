@@ -8,7 +8,7 @@ import (
 
 type pixbufLoader struct {
 	*gliba.Object
-	*gdk.PixbufLoader
+	internal *gdk.PixbufLoader
 }
 
 func wrapPixbufLoader(v *gdk.PixbufLoader, e error) (*pixbufLoader, error) {
@@ -22,33 +22,17 @@ func unwrapPixbufLoader(v gdki.PixbufLoader) *gdk.PixbufLoader {
 	if v == nil {
 		return nil
 	}
-	return v.(*pixbufLoader).PixbufLoader
+	return v.(*pixbufLoader).internal
 }
 
-// Specific implementations
-
-// func (v *pixbufLoader) Close() error {
-// 	return v.Close()
-// }
+func (v *pixbufLoader) Close() error {
+	return v.internal.Close()
+}
 
 func (v *pixbufLoader) GetPixbuf() (gdki.Pixbuf, error) {
-	return wrapPixbuf(v.PixbufLoader.GetPixbuf())
+	return wrapPixbuf(v.internal.GetPixbuf())
 }
 
-// func (v *pixbufLoader) Write(b []byte) (int, error) {
-// 	return v.Write(b)
-// }
-
-// Object implementations
-
-// func (v *pixbufLoader) Connect(s string, v1 interface{}, v2 ...interface{}) (glibi.SignalHandle, error) {
-// 	return gliba.Object_Connect(v.PixbufLoader, s, v1, v2...)
-// }
-
-// func (v *pixbufLoader) Emit(s string, v1 ...interface{}) (interface{}, error) {
-// 	return gliba.Object_Emit(v.PixbufLoader, s, v1...)
-// }
-
-// func (v *pixbufLoader) SetProperty(s string, v1 interface{}) error {
-// 	return gliba.Object_SetProperty(v.PixbufLoader, s, v1)
-// }
+func (v *pixbufLoader) Write(b []byte) (int, error) {
+	return v.internal.Write(b)
+}

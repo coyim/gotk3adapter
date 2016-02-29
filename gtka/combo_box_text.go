@@ -7,7 +7,7 @@ import (
 
 type comboBoxText struct {
 	*comboBox
-	*gtk.ComboBoxText
+	internal *gtk.ComboBoxText
 }
 
 func wrapComboBoxTextSimple(v *gtk.ComboBoxText) *comboBoxText {
@@ -25,5 +25,13 @@ func unwrapComboBoxText(v gtki.ComboBoxText) *gtk.ComboBoxText {
 	if v == nil {
 		return nil
 	}
-	return v.(*comboBoxText).ComboBoxText
+	return v.(*comboBoxText).internal
+}
+
+func (v *comboBoxText) AppendText(v1 string) {
+	v.internal.AppendText(v1)
+}
+
+func (v *comboBoxText) GetActiveText() string {
+	return v.internal.GetActiveText()
 }

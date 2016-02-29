@@ -9,11 +9,15 @@ type treeIter struct {
 	*gtk.TreeIter
 }
 
-func wrapTreeIter(v *gtk.TreeIter, e error) (*treeIter, error) {
+func wrapTreeIterSimple(v *gtk.TreeIter) *treeIter {
 	if v == nil {
-		return nil, e
+		return nil
 	}
-	return &treeIter{v}, e
+	return &treeIter{v}
+}
+
+func wrapTreeIter(v *gtk.TreeIter, e error) (*treeIter, error) {
+	return wrapTreeIterSimple(v), e
 }
 
 func unwrapTreeIter(v gtki.TreeIter) *gtk.TreeIter {

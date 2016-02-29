@@ -6,19 +6,24 @@ import (
 )
 
 type menuBar struct {
-	*gtk.MenuBar
+	*menuShell
+	internal *gtk.MenuBar
+}
+
+func wrapMenuBarSimple(v *gtk.MenuBar) *menuBar {
+	if v == nil {
+		return nil
+	}
+	return &menuBar{wrapMenuShellSimple(&v.MenuShell), v}
 }
 
 func wrapMenuBar(v *gtk.MenuBar, e error) (*menuBar, error) {
-	if v == nil {
-		return nil, e
-	}
-	return &menuBar{v}, e
+	return wrapMenuBarSimple(v), e
 }
 
 func unwrapMenuBar(v gtki.MenuBar) *gtk.MenuBar {
 	if v == nil {
 		return nil
 	}
-	return v.(*menuBar).MenuBar
+	return v.(*menuBar).internal
 }

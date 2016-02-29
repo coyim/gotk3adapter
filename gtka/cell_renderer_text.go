@@ -7,7 +7,7 @@ import (
 
 type cellRendererText struct {
 	*cellRenderer
-	*gtk.CellRendererText
+	internal *gtk.CellRendererText
 }
 
 func wrapCellRendererTextSimple(v *gtk.CellRendererText) *cellRendererText {
@@ -25,5 +25,5 @@ func unwrapCellRendererText(v gtki.CellRendererText) *gtk.CellRendererText {
 	if v == nil {
 		return nil
 	}
-	return v.(*cellRendererText).CellRendererText
+	return v.(*cellRendererText).internal
 }

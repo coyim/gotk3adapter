@@ -7,7 +7,7 @@ import (
 
 type box struct {
 	*container
-	*gtk.Box
+	internal *gtk.Box
 }
 
 func wrapBoxSimple(v *gtk.Box) *box {
@@ -25,5 +25,17 @@ func unwrapBox(v gtki.Box) *gtk.Box {
 	if v == nil {
 		return nil
 	}
-	return v.(*box).Box
+	return v.(*box).internal
+}
+
+func (v *box) PackEnd(v1 gtki.Widget, v2, v3 bool, v4 uint) {
+	v.internal.PackEnd(unwrapWidget(v1), v2, v3, v4)
+}
+
+func (v *box) PackStart(v1 gtki.Widget, v2, v3 bool, v4 uint) {
+	v.internal.PackStart(unwrapWidget(v1), v2, v3, v4)
+}
+
+func (v *box) SetChildPacking(v1 gtki.Widget, v2, v3 bool, v4 uint, v5 gtki.PackType) {
+	v.internal.SetChildPacking(unwrapWidget(v1), v2, v3, v4, gtk.PackType(v5))
 }

@@ -7,7 +7,7 @@ import (
 
 type cellRendererToggle struct {
 	*cellRenderer
-	*gtk.CellRendererToggle
+	internal *gtk.CellRendererToggle
 }
 
 func wrapCellRendererToggleSimple(v *gtk.CellRendererToggle) *cellRendererToggle {
@@ -25,5 +25,5 @@ func unwrapCellRendererToggle(v gtki.CellRendererToggle) *gtk.CellRendererToggle
 	if v == nil {
 		return nil
 	}
-	return v.(*cellRendererToggle).CellRendererToggle
+	return v.(*cellRendererToggle).internal
 }

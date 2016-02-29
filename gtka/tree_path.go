@@ -9,11 +9,15 @@ type treePath struct {
 	*gtk.TreePath
 }
 
-func wrapTreePath(v *gtk.TreePath, e error) (*treePath, error) {
+func wrapTreePathSimple(v *gtk.TreePath) *treePath {
 	if v == nil {
-		return nil, e
+		return nil
 	}
-	return &treePath{v}, e
+	return &treePath{v}
+}
+
+func wrapTreePath(v *gtk.TreePath, e error) (*treePath, error) {
+	return wrapTreePathSimple(v), e
 }
 
 func unwrapTreePath(v gtki.TreePath) *gtk.TreePath {

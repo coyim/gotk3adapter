@@ -6,19 +6,28 @@ import (
 )
 
 type headerBar struct {
-	*gtk.HeaderBar
+	*container
+	internal *gtk.HeaderBar
+}
+
+func wrapHeaderBarSimple(v *gtk.HeaderBar) *headerBar {
+	if v == nil {
+		return nil
+	}
+	return &headerBar{wrapContainerSimple(&v.Container), v}
 }
 
 func wrapHeaderBar(v *gtk.HeaderBar, e error) (*headerBar, error) {
-	if v == nil {
-		return nil, e
-	}
-	return &headerBar{v}, e
+	return wrapHeaderBarSimple(v), e
 }
 
 func unwrapHeaderBar(v gtki.HeaderBar) *gtk.HeaderBar {
 	if v == nil {
 		return nil
 	}
-	return v.(*headerBar).HeaderBar
+	return v.(*headerBar).internal
+}
+
+func (v *headerBar) SetSubtitle(v1 string) {
+	v.internal.SetSubtitle(v1)
 }
