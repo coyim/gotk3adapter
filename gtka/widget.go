@@ -13,6 +13,14 @@ type widget struct {
 	internal *gtk.Widget
 }
 
+type asWidget interface {
+	toWidget() *widget
+}
+
+func (v *widget) toWidget() *widget {
+	return v
+}
+
 func wrapWidgetSimple(v *gtk.Widget) *widget {
 	if v == nil {
 		return nil
@@ -28,7 +36,7 @@ func unwrapWidget(v gtki.Widget) *gtk.Widget {
 	if v == nil {
 		return nil
 	}
-	return v.(*widget).internal
+	return v.(asWidget).toWidget().internal
 }
 
 func (v *widget) SetHExpand(v1 bool) {

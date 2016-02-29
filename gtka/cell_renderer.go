@@ -11,6 +11,14 @@ type cellRenderer struct {
 	*gtk.CellRenderer
 }
 
+type asCellRenderer interface {
+	toCellRenderer() *cellRenderer
+}
+
+func (v *cellRenderer) toCellRenderer() *cellRenderer {
+	return v
+}
+
 func wrapCellRendererSimple(v *gtk.CellRenderer) *cellRenderer {
 	if v == nil {
 		return nil
@@ -26,5 +34,5 @@ func unwrapCellRenderer(v gtki.CellRenderer) *gtk.CellRenderer {
 	if v == nil {
 		return nil
 	}
-	return v.(*cellRenderer).CellRenderer
+	return v.(asCellRenderer).toCellRenderer().CellRenderer
 }

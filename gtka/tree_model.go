@@ -7,7 +7,14 @@ func unwrapTreeModel(s gtki.TreeModel) gtk.ITreeModel {
 	if s == nil {
 		return nil
 	}
-	return s.(gtk.ITreeModel)
+
+	switch ss := s.(type) {
+	case *listStore:
+		return unwrapListStore(ss)
+	case *treeStore:
+		return unwrapTreeStore(ss)
+	}
+	return nil
 }
 
 func wrapTreeModelSimple(s gtk.ITreeModel) gtki.TreeModel {

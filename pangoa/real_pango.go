@@ -14,5 +14,5 @@ func (*RealPango) AsFontDescription(v interface{}) pangoi.FontDescription {
 		return nil
 	}
 
-	return wrapFontDescription(v.(*pango.FontDescription))
+	return wrapFontDescriptionSimple(v.(*pango.FontDescription))
 }

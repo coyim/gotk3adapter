@@ -10,6 +10,14 @@ type menuItem struct {
 	internal *gtk.MenuItem
 }
 
+type asMenuItem interface {
+	toMenuItem() *menuItem
+}
+
+func (v *menuItem) toMenuItem() *menuItem {
+	return v
+}
+
 func wrapMenuItemSimple(v *gtk.MenuItem) *menuItem {
 	if v == nil {
 		return nil
@@ -25,7 +33,7 @@ func unwrapMenuItem(v gtki.MenuItem) *gtk.MenuItem {
 	if v == nil {
 		return nil
 	}
-	return v.(*menuItem).internal
+	return v.(asMenuItem).toMenuItem().internal
 }
 
 func (v *menuItem) GetLabel() string {

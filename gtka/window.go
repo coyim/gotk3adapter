@@ -12,6 +12,14 @@ type window struct {
 	internal *gtk.Window
 }
 
+type asWindow interface {
+	toWindow() *window
+}
+
+func (v *window) toWindow() *window {
+	return v
+}
+
 func wrapWindowSimple(v *gtk.Window) *window {
 	if v == nil {
 		return nil
@@ -27,7 +35,7 @@ func unwrapWindow(v gtki.Window) *gtk.Window {
 	if v == nil {
 		return nil
 	}
-	return v.(*window).internal
+	return v.(asWindow).toWindow().internal
 }
 
 func (v *window) AddAccelGroup(v2 gtki.AccelGroup) {

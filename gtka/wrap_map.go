@@ -105,6 +105,8 @@ func WrapLocal(o interface{}) (interface{}, bool) {
 		return wrapTextViewSimple(oo), true
 	case *gtk.ToggleButton:
 		return wrapToggleButtonSimple(oo), true
+	case *gtk.TreePath:
+		return wrapTreePathSimple(oo), true
 	case *gtk.TreeSelection:
 		return wrapTreeSelectionSimple(oo), true
 	case *gtk.TreeStore:
@@ -198,6 +200,8 @@ func UnwrapLocal(o interface{}) (interface{}, bool) {
 		return unwrapTextView(oo), true
 	case *toggleButton:
 		return unwrapToggleButton(oo), true
+	case *treePath:
+		return unwrapTreePath(oo), true
 	case *treeSelection:
 		return unwrapTreeSelection(oo), true
 	case *treeStore:

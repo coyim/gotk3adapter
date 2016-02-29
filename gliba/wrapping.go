@@ -65,6 +65,10 @@ func init() {
 }
 
 func UnwrapPrimitive(v interface{}) (interface{}, bool) {
+	if v == nil {
+		return nil, true
+	}
+
 	switch e := v.(type) {
 	case bool:
 		return e, true
