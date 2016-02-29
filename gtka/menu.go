@@ -28,6 +28,13 @@ func unwrapMenu(v gtki.Menu) *gtk.Menu {
 	return v.(*menu).internal
 }
 
+func unwrapMenuToIMenu(v gtki.Menu) gtk.IMenu {
+	if v == nil {
+		return nil
+	}
+	return v.(*menu).internal
+}
+
 func (v *menu) PopupAtMouseCursor(v1 gtki.Menu, v2 gtki.MenuItem, v3 int, v4 uint32) {
-	v.internal.PopupAtMouseCursor(unwrapMenu(v1), unwrapMenuItem(v2), v3, v4)
+	v.internal.PopupAtMouseCursor(unwrapMenuToIMenu(v1), unwrapMenuItemToIMenuItem(v2), v3, v4)
 }

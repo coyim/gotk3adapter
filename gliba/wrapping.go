@@ -117,13 +117,29 @@ func Unwrap(o interface{}) interface{} {
 func WrapLocal(o interface{}) (interface{}, bool) {
 	switch oo := o.(type) {
 	case *glib.Application:
-		return WrapApplicationSimple(oo), true
+		val := WrapApplicationSimple(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
 	case *glib.Object:
-		return WrapObjectSimple(oo), true
+		val := WrapObjectSimple(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
 	case *glib.Signal:
-		return wrapSignalSimple(oo), true
+		val := wrapSignalSimple(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
 	case *glib.Value:
-		return wrapValueSimple(oo), true
+		val := wrapValueSimple(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
 	}
 	return nil, false
 }
@@ -131,13 +147,29 @@ func WrapLocal(o interface{}) (interface{}, bool) {
 func UnwrapLocal(o interface{}) (interface{}, bool) {
 	switch oo := o.(type) {
 	case *Application:
-		return unwrapApplication(oo), true
+		val := unwrapApplication(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
 	case *Object:
-		return unwrapObject(oo), true
+		val := unwrapObject(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
 	case *signal:
-		return unwrapSignal(oo), true
+		val := unwrapSignal(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
 	case *value:
-		return unwrapValue(oo), true
+		val := unwrapValue(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
 	}
 	return nil, false
 }

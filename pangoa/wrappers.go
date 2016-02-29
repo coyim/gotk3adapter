@@ -14,7 +14,11 @@ func init() {
 func WrapLocal(o interface{}) (interface{}, bool) {
 	switch oo := o.(type) {
 	case *pango.FontDescription:
-		return wrapFontDescriptionSimple(oo), true
+		val := wrapFontDescriptionSimple(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
 	default:
 		return nil, false
 	}
@@ -23,7 +27,11 @@ func WrapLocal(o interface{}) (interface{}, bool) {
 func UnwrapLocal(o interface{}) (interface{}, bool) {
 	switch oo := o.(type) {
 	case *fontDescription:
-		return unwrapFontDescription(oo), true
+		val := unwrapFontDescription(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
 	default:
 		return nil, false
 	}

@@ -29,5 +29,5 @@ func unwrapMenuShell(v gtki.MenuShell) *gtk.MenuShell {
 }
 
 func (v *menuShell) Append(v1 gtki.MenuItem) {
-	v.internal.Append(unwrapMenuItem(v1))
+	v.internal.Append(unwrapMenuItemToIMenuItem(v1))
 }

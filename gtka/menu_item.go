@@ -36,6 +36,13 @@ func unwrapMenuItem(v gtki.MenuItem) *gtk.MenuItem {
 	return v.(asMenuItem).toMenuItem().internal
 }
 
+func unwrapMenuItemToIMenuItem(v gtki.MenuItem) gtk.IMenuItem {
+	if v == nil {
+		return nil
+	}
+	return v.(asMenuItem).toMenuItem().internal
+}
+
 func (v *menuItem) GetLabel() string {
 	return v.internal.GetLabel()
 }

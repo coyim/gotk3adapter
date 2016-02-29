@@ -14,17 +14,41 @@ func init() {
 func WrapLocal(o interface{}) (interface{}, bool) {
 	switch oo := o.(type) {
 	case *gdk.EventButton:
-		return wrapEventButtonSimple(oo), true
+		val := wrapEventButtonSimple(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
 	case *gdk.Event:
-		return wrapEventSimple(oo), true
+		val := wrapEventSimple(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
 	case *gdk.Pixbuf:
-		return wrapPixbufSimple(oo), true
+		val := wrapPixbufSimple(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
 	case *gdk.PixbufLoader:
-		return wrapPixbufLoaderSimple(oo), true
+		val := wrapPixbufLoaderSimple(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
 	case *gdk.Screen:
-		return wrapScreenSimple(oo), true
+		val := wrapScreenSimple(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
 	case *gdk.Window:
-		return WrapWindowSimple(oo), true
+		val := WrapWindowSimple(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
 	default:
 		return nil, false
 	}
@@ -33,17 +57,41 @@ func WrapLocal(o interface{}) (interface{}, bool) {
 func UnwrapLocal(o interface{}) (interface{}, bool) {
 	switch oo := o.(type) {
 	case *eventButton:
-		return unwrapEventButton(oo), true
+		val := unwrapEventButton(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
 	case *event:
-		return unwrapEvent(oo), true
+		val := unwrapEvent(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
 	case *pixbuf:
-		return UnwrapPixbuf(oo), true
+		val := UnwrapPixbuf(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
 	case *pixbufLoader:
-		return unwrapPixbufLoader(oo), true
+		val := unwrapPixbufLoader(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
 	case *screen:
-		return UnwrapScreen(oo), true
+		val := UnwrapScreen(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
 	case *window:
-		return UnwrapWindow(oo), true
+		val := UnwrapWindow(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
 	default:
 		return nil, false
 	}
