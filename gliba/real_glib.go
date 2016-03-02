@@ -17,6 +17,10 @@ func (*RealGlib) InitI18n(domain string, dir string) {
 	glib.InitI18n(domain, dir)
 }
 
+func (*RealGlib) Local(v1 string) string {
+	return glib.Local(v1)
+}
+
 func (*RealGlib) SignalNew(s string) (glibi.Signal, error) {
 	return wrapSignal(glib.SignalNew(s))
 }

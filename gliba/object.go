@@ -37,14 +37,40 @@ func fixupReturnValue(v []reflect.Value) interface{} {
 	return UnwrapAllGuard(v[0].Interface())
 }
 
-func fixupArg(v interface{}) reflect.Value {
-	return reflect.ValueOf(WrapAllGuard(v))
+func fixupArg(tv reflect.Type, v interface{}) reflect.Value {
+	vvt := reflect.TypeOf(v)
+
+	switch vvt.Kind() {
+	case reflect.Bool,
+		reflect.Int,
+		reflect.Int8,
+		reflect.Int16,
+		reflect.Int32,
+		reflect.Int64,
+		reflect.Uint,
+		reflect.Uint8,
+		reflect.Uint16,
+		reflect.Uint32,
+		reflect.Uint64,
+		reflect.Uintptr,
+		reflect.Float32,
+		reflect.Float64,
+		reflect.Complex64,
+		reflect.Complex128:
+		if vvt != tv {
+			return reflect.ValueOf(v).Convert(tv)
+		} else {
+			return reflect.ValueOf(v)
+		}
+	default:
+		return reflect.ValueOf(WrapAllGuard(v))
+	}
 }
 
-func fixupArgs(v ...interface{}) []reflect.Value {
+func fixupArgs(t reflect.Type, v ...interface{}) []reflect.Value {
 	res := make([]reflect.Value, len(v))
 	for ix, vv := range v {
-		res[ix] = fixupArg(vv)
+		res[ix] = fixupArg(t.In(ix), vv)
 	}
 	return res
 }
@@ -78,41 +104,41 @@ func FixupFunction(v interface{}) interface{} {
 	case 1:
 		if no == 0 {
 			return func(v1 interface{}) {
-				rf.Call(fixupArgs(v1))
+				rf.Call(fixupArgs(rf.Type(), v1))
 			}
 		} else {
 			return func(v1 interface{}) interface{} {
-				return fixupReturnValue(rf.Call(fixupArgs(v1)))
+				return fixupReturnValue(rf.Call(fixupArgs(rf.Type(), v1)))
 			}
 		}
 	case 2:
 		if no == 0 {
 			return func(v1, v2 interface{}) {
-				rf.Call(fixupArgs(v1, v2))
+				rf.Call(fixupArgs(rf.Type(), v1, v2))
 			}
 		} else {
 			return func(v1, v2 interface{}) interface{} {
-				return fixupReturnValue(rf.Call(fixupArgs(v1, v2)))
+				return fixupReturnValue(rf.Call(fixupArgs(rf.Type(), v1, v2)))
 			}
 		}
 	case 3:
 		if no == 0 {
 			return func(v1, v2, v3 interface{}) {
-				rf.Call(fixupArgs(v1, v2, v3))
+				rf.Call(fixupArgs(rf.Type(), v1, v2, v3))
 			}
 		} else {
 			return func(v1, v2, v3 interface{}) interface{} {
-				return fixupReturnValue(rf.Call(fixupArgs(v1, v2, v3)))
+				return fixupReturnValue(rf.Call(fixupArgs(rf.Type(), v1, v2, v3)))
 			}
 		}
 	case 4:
 		if no == 0 {
 			return func(v1, v2, v3, v4 interface{}) {
-				rf.Call(fixupArgs(v1, v2, v3, v4))
+				rf.Call(fixupArgs(rf.Type(), v1, v2, v3, v4))
 			}
 		} else {
 			return func(v1, v2, v3, v4 interface{}) interface{} {
-				return fixupReturnValue(rf.Call(fixupArgs(v1, v2, v3, v4)))
+				return fixupReturnValue(rf.Call(fixupArgs(rf.Type(), v1, v2, v3, v4)))
 			}
 		}
 	}

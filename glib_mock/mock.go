@@ -11,6 +11,10 @@ func (*Mock) IdleAdd(f interface{}, args ...interface{}) (glibi.SourceHandle, er
 func (*Mock) InitI18n(domain string, dir string) {
 }
 
+func (*Mock) Local(vx string) string {
+	return vx
+}
+
 func (*Mock) SignalNew(s string) (glibi.Signal, error) {
 	return &MockSignal{}, nil
 }
