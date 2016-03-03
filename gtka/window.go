@@ -69,3 +69,7 @@ func (v *window) SetTitlebar(v2 gtki.Widget) {
 func (v *window) SetTransientFor(v2 gtki.Window) {
 	v.internal.SetTransientFor(unwrapWindow(v2))
 }
+
+func (v *window) Present() {
+	v.internal.Present()
+}

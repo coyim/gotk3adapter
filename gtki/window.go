@@ -7,6 +7,7 @@ type Window interface {
 
 	AddAccelGroup(AccelGroup)
 	IsActive() bool
+	Present()
 	Resize(int, int)
 	SetApplication(Application)
 	SetIcon(gdki.Pixbuf)

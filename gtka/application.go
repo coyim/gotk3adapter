@@ -28,3 +28,11 @@ func unwrapApplication(v gtki.Application) *gtk.Application {
 	}
 	return v.(*application).internal
 }
+
+func (v *application) GetActiveWindow() gtki.Window {
+	ret := wrapWindowSimple(v.internal.GetActiveWindow())
+	if ret == nil {
+		return nil
+	}
+	return ret
+}
