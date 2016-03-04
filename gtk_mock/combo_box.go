@@ -3,7 +3,7 @@ package gtk_mock
 import "github.com/twstrike/gotk3adapter/gtki"
 
 type MockComboBox struct {
-	*MockBin
+	MockBin
 }
 
 func (*MockComboBox) GetActiveIter() (gtki.TreeIter, error) {

@@ -6,7 +6,7 @@ import (
 )
 
 type MockTextTagTable struct {
-	*glib_mock.MockObject
+	glib_mock.MockObject
 }
 
 func (*MockTextTagTable) Add(v1 gtki.TextTag) {

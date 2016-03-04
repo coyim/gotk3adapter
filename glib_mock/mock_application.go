@@ -1,7 +1,7 @@
 package glib_mock
 
 type MockApplication struct {
-	*MockObject
+	MockObject
 }
 
 func (*MockApplication) Quit() {}

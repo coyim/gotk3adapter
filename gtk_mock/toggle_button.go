@@ -1,7 +1,7 @@
 package gtk_mock
 
 type MockToggleButton struct {
-	*MockButton
+	MockButton
 }
 
 func (*MockToggleButton) GetActive() bool {

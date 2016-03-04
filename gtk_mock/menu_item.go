@@ -3,7 +3,7 @@ package gtk_mock
 import "github.com/twstrike/gotk3adapter/gtki"
 
 type MockMenuItem struct {
-	*MockBin
+	MockBin
 }
 
 func (*MockMenuItem) GetLabel() string {

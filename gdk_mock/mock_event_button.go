@@ -1,7 +1,7 @@
 package gdk_mock
 
 type MockEventButton struct {
-	*MockEvent
+	MockEvent
 }
 
 func (*MockEventButton) Button() uint {

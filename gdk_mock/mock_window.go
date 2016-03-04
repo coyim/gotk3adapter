@@ -3,7 +3,7 @@ package gdk_mock
 import "github.com/twstrike/gotk3adapter/glib_mock"
 
 type MockWindow struct {
-	*glib_mock.MockObject
+	glib_mock.MockObject
 }
 
 func (*MockWindow) GetDesktop() uint32 {

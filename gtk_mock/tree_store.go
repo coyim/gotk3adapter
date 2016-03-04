@@ -7,7 +7,7 @@ import (
 )
 
 type MockTreeStore struct {
-	*glib_mock.MockObject
+	glib_mock.MockObject
 }
 
 func (v *MockTreeStore) GetIter(v1 gtki.TreePath) (gtki.TreeIter, error) {

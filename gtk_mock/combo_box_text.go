@@ -1,7 +1,7 @@
 package gtk_mock
 
 type MockComboBoxText struct {
-	*MockComboBox
+	MockComboBox
 }
 
 func (*MockComboBoxText) AppendText(v1 string) {

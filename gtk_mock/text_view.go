@@ -3,7 +3,7 @@ package gtk_mock
 import "github.com/twstrike/gotk3adapter/gtki"
 
 type MockTextView struct {
-	*MockContainer
+	MockContainer
 }
 
 func (*MockTextView) SetEditable(v1 bool) {

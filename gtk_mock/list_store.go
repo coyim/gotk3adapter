@@ -7,7 +7,7 @@ import (
 )
 
 type MockListStore struct {
-	*glib_mock.MockObject
+	glib_mock.MockObject
 }
 
 func (*MockListStore) Clear() {

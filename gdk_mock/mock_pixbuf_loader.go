@@ -6,7 +6,7 @@ import (
 )
 
 type MockPixbufLoader struct {
-	*glib_mock.MockObject
+	glib_mock.MockObject
 }
 
 func (*MockPixbufLoader) Close() error {

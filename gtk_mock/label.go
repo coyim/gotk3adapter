@@ -1,7 +1,7 @@
 package gtk_mock
 
 type MockLabel struct {
-	*MockWidget
+	MockWidget
 }
 
 func (*MockLabel) SetLabel(v1 string) {

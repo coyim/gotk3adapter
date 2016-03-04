@@ -1,7 +1,7 @@
 package gtk_mock
 
 type MockFileChooserDialog struct {
-	*MockDialog
+	MockDialog
 }
 
 func (*MockFileChooserDialog) GetFilename() string {

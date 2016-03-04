@@ -1,7 +1,7 @@
 package gtk_mock
 
 type MockEntry struct {
-	*MockWidget
+	MockWidget
 }
 
 func (*MockEntry) GetText() (string, error) {

@@ -6,7 +6,7 @@ import (
 )
 
 type MockWindow struct {
-	*MockBin
+	MockBin
 }
 
 func (*MockWindow) AddAccelGroup(v2 gtki.AccelGroup) {

@@ -3,7 +3,7 @@ package gtk_mock
 import "github.com/twstrike/gotk3adapter/gtki"
 
 type MockContainer struct {
-	*MockWidget
+	MockWidget
 }
 
 func (*MockContainer) Add(v2 gtki.Widget) {

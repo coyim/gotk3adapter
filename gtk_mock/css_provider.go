@@ -3,7 +3,7 @@ package gtk_mock
 import "github.com/twstrike/gotk3adapter/glib_mock"
 
 type MockCssProvider struct {
-	*glib_mock.MockObject
+	glib_mock.MockObject
 }
 
 func (*MockCssProvider) LoadFromData(v1 string) error {

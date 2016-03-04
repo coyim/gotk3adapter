@@ -3,7 +3,7 @@ package gtk_mock
 import "github.com/twstrike/gotk3adapter/gtki"
 
 type MockScrolledWindow struct {
-	*MockBin
+	MockBin
 }
 
 func (*MockScrolledWindow) GetVAdjustment() gtki.Adjustment {

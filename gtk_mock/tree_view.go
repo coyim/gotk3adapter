@@ -3,7 +3,7 @@ package gtk_mock
 import "github.com/twstrike/gotk3adapter/gtki"
 
 type MockTreeView struct {
-	*MockContainer
+	MockContainer
 }
 
 func (*MockTreeView) CollapseRow(v1 gtki.TreePath) bool {

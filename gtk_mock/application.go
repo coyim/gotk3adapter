@@ -6,7 +6,7 @@ import (
 )
 
 type MockApplication struct {
-	*glib_mock.MockApplication
+	glib_mock.MockApplication
 }
 
 func (*MockApplication) GetActiveWindow() gtki.Window {

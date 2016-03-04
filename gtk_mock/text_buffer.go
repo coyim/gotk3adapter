@@ -6,7 +6,7 @@ import (
 )
 
 type MockTextBuffer struct {
-	*glib_mock.MockObject
+	glib_mock.MockObject
 }
 
 func (*MockTextBuffer) ApplyTagByName(v1 string, v2, v3 gtki.TextIter) {

@@ -7,7 +7,7 @@ import (
 )
 
 type MockWidget struct {
-	*glib_mock.MockObject
+	glib_mock.MockObject
 }
 
 func (*MockWidget) SetHExpand(v1 bool) {

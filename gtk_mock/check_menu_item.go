@@ -1,7 +1,7 @@
 package gtk_mock
 
 type MockCheckMenuItem struct {
-	*MockMenuItem
+	MockMenuItem
 }
 
 func (*MockCheckMenuItem) GetActive() bool {

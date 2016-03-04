@@ -6,7 +6,7 @@ import (
 )
 
 type MockBuilder struct {
-	*glib_mock.MockObject
+	glib_mock.MockObject
 }
 
 func (*MockBuilder) AddFromString(v1 string) error {

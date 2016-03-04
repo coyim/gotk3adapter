@@ -1,7 +1,7 @@
 package gtk_mock
 
 type MockAboutDialog struct {
-	*MockDialog
+	MockDialog
 }
 
 func (*MockAboutDialog) SetAuthors(v1 []string) {

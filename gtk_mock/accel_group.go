@@ -7,7 +7,7 @@ import (
 )
 
 type MockAccelGroup struct {
-	*glib_mock.MockObject
+	glib_mock.MockObject
 }
 
 func (*MockAccelGroup) Connect2(v2 uint, v3 gdki.ModifierType, v4 gtki.AccelFlags, v5 interface{}) {

@@ -6,7 +6,7 @@ import (
 )
 
 type MockStyleContext struct {
-	*glib_mock.MockObject
+	glib_mock.MockObject
 }
 
 func (v *MockStyleContext) AddClass(v1 string) {

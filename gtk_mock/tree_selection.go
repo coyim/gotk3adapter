@@ -6,7 +6,7 @@ import (
 )
 
 type MockTreeSelection struct {
-	*glib_mock.MockObject
+	glib_mock.MockObject
 }
 
 func (*MockTreeSelection) SelectIter(v1 gtki.TreeIter) {
