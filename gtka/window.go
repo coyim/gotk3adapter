@@ -43,7 +43,11 @@ func (v *window) AddAccelGroup(v2 gtki.AccelGroup) {
 }
 
 func (v *window) GetTitle() string {
-	return v.internal.GetTitle()
+	v, e := v.internal.GetTitle()
+	if e != nil {
+		return ""
+	}
+	return v
 }
 
 func (v *window) IsActive() bool {
