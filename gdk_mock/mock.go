@@ -8,6 +8,10 @@ func (*Mock) EventButtonFrom(ev gdki.Event) gdki.EventButton {
 	return nil
 }
 
+func (*Mock) EventKeyFrom(ev gdki.Event) gdki.EventKey {
+	return nil
+}
+
 func (*Mock) PixbufLoaderNew() (gdki.PixbufLoader, error) {
 	return &MockPixbufLoader{}, nil
 }
