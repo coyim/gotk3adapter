@@ -127,6 +127,6 @@ func (*RealGtk) WindowSetDefaultIcon(icon gdki.Pixbuf) {
 	gtk.WindowSetDefaultIcon(gdka.UnwrapPixbuf(icon))
 }
 
-func (*RealGtk) SettingsGetDefault() (gtki.Settings, error) { 
+func (*RealGtk) SettingsGetDefault() (gtki.Settings, error) {
 	return wrapSettings(gtk.SettingsGetDefault())
 }
