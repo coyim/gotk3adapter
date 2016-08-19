@@ -34,6 +34,10 @@ func (*RealGtk) ApplicationNew(appId string, flags glibi.ApplicationFlags) (gtki
 	return wrapApplication(gtk.ApplicationNew(appId, glib.ApplicationFlags(flags)))
 }
 
+func (*RealGtk) AssistantNew() (gtki.Assistant, error) {
+	return wrapAssistant(gtk.AssistantNew())
+}
+
 func (*RealGtk) BuilderNew() (gtki.Builder, error) {
 	return wrapBuilder(gtk.BuilderNew())
 }

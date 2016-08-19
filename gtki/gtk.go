@@ -11,6 +11,7 @@ type Gtk interface {
 	AcceleratorParse(string) (uint, gdki.ModifierType)
 	AddProviderForScreen(gdki.Screen, StyleProvider, uint)
 	ApplicationNew(string, glibi.ApplicationFlags) (Application, error)
+	AssistantNew() (Assistant, error)
 	BuilderNew() (Builder, error)
 	BuilderNewFromResource(string) (Builder, error)
 	CellRendererTextNew() (CellRendererText, error)
