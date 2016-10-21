@@ -55,6 +55,14 @@ func (*Mock) CssProviderNew() (gtki.CssProvider, error) {
 	return nil, nil
 }
 
+func (*Mock) CssProviderGetDefault() (gtki.CssProvider, error) {
+	return nil, nil
+}
+
+func (*Mock) CssProviderGetNamed(string, string) (gtki.CssProvider, error) {
+	return nil, nil
+}
+
 func (*Mock) EntryNew() (gtki.Entry, error) {
 	return nil, nil
 }

@@ -18,6 +18,8 @@ type Gtk interface {
 	CheckButtonNewWithMnemonic(string) (CheckButton, error)
 	CheckMenuItemNewWithMnemonic(string) (CheckMenuItem, error)
 	CssProviderNew() (CssProvider, error)
+	CssProviderGetDefault() (CssProvider, error)
+	CssProviderGetNamed(string, string) (CssProvider, error)
 	EntryNew() (Entry, error)
 	FileChooserDialogNewWith2Buttons(string, Window, FileChooserAction, string, ResponseType, string, ResponseType) (FileChooserDialog, error)
 	Init(*[]string)

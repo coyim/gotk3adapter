@@ -62,6 +62,14 @@ func (*RealGtk) CssProviderNew() (gtki.CssProvider, error) {
 	return wrapCssProvider(gtk.CssProviderNew())
 }
 
+func (*RealGtk) CssProviderGetDefault() (gtki.CssProvider, error) {
+	return wrapCssProvider(gtk.CssProviderGetDefault())
+}
+
+func (*RealGtk) CssProviderGetNamed(name, variant string) (gtki.CssProvider, error) {
+	return wrapCssProvider(gtk.CssProviderGetNamed(name, variant))
+}
+
 func (*RealGtk) EntryNew() (gtki.Entry, error) {
 	return wrapEntry(gtk.EntryNew())
 }
