@@ -1,0 +1,35 @@
+{
+	"ImportPath": "github.com/twstrike/gotk3adapter",
+	"GoVersion": "go1.6",
+	"GodepVersion": "v74",
+	"Packages": [
+		"./..."
+	],
+	"Deps": [
+		{
+			"ImportPath": "github.com/gotk3/gotk3/cairo",
+			"Comment": "GOTK3_0_2_0-501-g2caa15f",
+			"Rev": "2caa15f08f9b59449621b05a60f76b65cc5a9aca"
+		},
+		{
+			"ImportPath": "github.com/gotk3/gotk3/gdk",
+			"Comment": "GOTK3_0_2_0-501-g2caa15f",
+			"Rev": "2caa15f08f9b59449621b05a60f76b65cc5a9aca"
+		},
+		{
+			"ImportPath": "github.com/gotk3/gotk3/glib",
+			"Comment": "GOTK3_0_2_0-501-g2caa15f",
+			"Rev": "2caa15f08f9b59449621b05a60f76b65cc5a9aca"
+		},
+		{
+			"ImportPath": "github.com/gotk3/gotk3/gtk",
+			"Comment": "GOTK3_0_2_0-501-g2caa15f",
+			"Rev": "2caa15f08f9b59449621b05a60f76b65cc5a9aca"
+		},
+		{
+			"ImportPath": "github.com/gotk3/gotk3/pango",
+			"Comment": "GOTK3_0_2_0-501-g2caa15f",
+			"Rev": "2caa15f08f9b59449621b05a60f76b65cc5a9aca"
+		}
+	]
+}
