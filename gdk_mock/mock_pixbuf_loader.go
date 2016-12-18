@@ -17,6 +17,9 @@ func (*MockPixbufLoader) GetPixbuf() (gdki.Pixbuf, error) {
 	return nil, nil
 }
 
+func (*MockPixbufLoader) SetSize(int, int) {
+}
+
 func (*MockPixbufLoader) Write(b []byte) (int, error) {
 	return 0, nil
 }
