@@ -39,6 +39,7 @@ func init() {
 	gtki.AssertSeparatorMenuItem(&MockSeparatorMenuItem{})
 	gtki.AssertSettings(&MockSettings{})
 	gtki.AssertSpinButton(&MockSpinButton{})
+	gtki.AssertSpinner(&MockSpinner{})
 	gtki.AssertStyleContext(&MockStyleContext{})
 	gtki.AssertTextBuffer(&MockTextBuffer{})
 	gtki.AssertTextIter(&MockTextIter{})
