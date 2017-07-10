@@ -235,6 +235,12 @@ func WrapLocal(o interface{}) (interface{}, bool) {
 			return nil, true
 		}
 		return val, true
+	case *gtk.Spinner:
+		val := wrapSpinnerSimple(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
 	case *gtk.TextBuffer:
 		val := wrapTextBufferSimple(oo)
 		if val == nil {
@@ -514,6 +520,12 @@ func UnwrapLocal(o interface{}) (interface{}, bool) {
 		return val, true
 	case *spinButton:
 		val := unwrapSpinButton(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
+	case *spinner:
+		val := unwrapSpinner(oo)
 		if val == nil {
 			return nil, true
 		}

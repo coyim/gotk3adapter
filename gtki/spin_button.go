@@ -1,10 +1,5 @@
 package gtki
 
-import (
-	. "github.com/gotk3/gotk3/gtk"
-	. "github.com/twstrike/gotk3adapter/gtki"
-)
-
 type SpinButton interface {
 	Entry
 
