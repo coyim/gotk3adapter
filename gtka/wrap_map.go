@@ -211,6 +211,12 @@ func WrapLocal(o interface{}) (interface{}, bool) {
 			return nil, true
 		}
 		return val, true
+	case *gtk.ProgressBar:
+		val := wrapProgressBarSimple(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
 	case *gtk.Revealer:
 		val := wrapRevealerSimple(oo)
 		if val == nil {
@@ -496,6 +502,12 @@ func UnwrapLocal(o interface{}) (interface{}, bool) {
 		return val, true
 	case *notebook:
 		val := unwrapNotebook(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
+	case *progressBar:
+		val := unwrapProgressBar(oo)
 		if val == nil {
 			return nil, true
 		}

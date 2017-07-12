@@ -34,6 +34,7 @@ func init() {
 	gtki.AssertMenu(&menu{})
 	gtki.AssertMessageDialog(&messageDialog{})
 	gtki.AssertNotebook(&notebook{})
+	gtki.AssertProgressBar(&progressBar{})
 	gtki.AssertRevealer(&revealer{})
 	gtki.AssertScrolledWindow(&scrolledWindow{})
 	gtki.AssertSeparatorMenuItem(&separatorMenuItem{})
