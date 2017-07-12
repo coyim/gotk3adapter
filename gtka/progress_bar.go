@@ -1,8 +1,8 @@
 package gtka
 
 import (
-	"github.com/claucece/gotk3adapter/gtki"
 	"github.com/gotk3/gotk3/gtk"
+	"github.com/twstrike/gotk3adapter/gtki"
 )
 
 type progressBar struct {
