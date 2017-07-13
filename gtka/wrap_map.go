@@ -157,6 +157,12 @@ func WrapLocal(o interface{}) (interface{}, bool) {
 			return nil, true
 		}
 		return val, true
+	case *gtk.Image:
+		val := wrapImageSimple(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
 	case *gtk.InfoBar:
 		val := wrapInfoBarSimple(oo)
 		if val == nil {
@@ -448,6 +454,12 @@ func UnwrapLocal(o interface{}) (interface{}, bool) {
 		return val, true
 	case *headerBar:
 		val := unwrapHeaderBar(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
+	case *image:
+		val := unwrapImage(oo)
 		if val == nil {
 			return nil, true
 		}

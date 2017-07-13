@@ -41,6 +41,18 @@ var (
 	FILE_CHOOSER_ACTION_CREATE_FOLDER FileChooserAction
 )
 
+type IconSize int
+
+var (
+	ICON_SIZE_INVALID       IconSize
+	ICON_SIZE_MENU          IconSize
+	ICON_SIZE_SMALL_TOOLBAR IconSize
+	ICON_SIZE_LARGE_TOOLBAR IconSize
+	ICON_SIZE_BUTTON        IconSize
+	ICON_SIZE_DND           IconSize
+	ICON_SIZE_DIALOG        IconSize
+)
+
 // PackType is a representation of GTK's GtkPackType.
 type PackType int
 
