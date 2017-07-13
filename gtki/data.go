@@ -19,6 +19,18 @@ var (
 	ALIGN_CENTER Align
 )
 
+// AssistantPageType is a representation of GTK's GtkAssistantPageType.
+type AssistantPageType int
+
+var (
+	ASSISTANT_PAGE_CONTENT  AssistantPageType
+	ASSISTANT_PAGE_INTRO    AssistantPageType
+	ASSISTANT_PAGE_CONFIRM  AssistantPageType
+	ASSISTANT_PAGE_SUMMARY  AssistantPageType
+	ASSISTANT_PAGE_PROGRESS AssistantPageType
+	ASSISTANT_PAGE_CUSTOM   AssistantPageType
+)
+
 // FileChooserAction is a representation of GTK's GtkFileChooserAction.
 type FileChooserAction int
 

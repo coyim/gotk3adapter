@@ -15,6 +15,13 @@ func init() {
 	gtki.ALIGN_END = gtki.Align(gtk.ALIGN_END)
 	gtki.ALIGN_CENTER = gtki.Align(gtk.ALIGN_CENTER)
 
+	gtki.ASSISTANT_PAGE_CONTENT = gtki.AssistantPageType(gtk.ASSISTANT_PAGE_CONTENT)
+	gtki.ASSISTANT_PAGE_INTRO = gtki.AssistantPageType(gtk.ASSISTANT_PAGE_INTRO)
+	gtki.ASSISTANT_PAGE_CONFIRM = gtki.AssistantPageType(gtk.ASSISTANT_PAGE_CONFIRM)
+	gtki.ASSISTANT_PAGE_SUMMARY = gtki.AssistantPageType(gtk.ASSISTANT_PAGE_SUMMARY)
+	gtki.ASSISTANT_PAGE_PROGRESS = gtki.AssistantPageType(gtk.ASSISTANT_PAGE_PROGRESS)
+	gtki.ASSISTANT_PAGE_CUSTOM = gtki.AssistantPageType(gtk.ASSISTANT_PAGE_CUSTOM)
+
 	gtki.FILE_CHOOSER_ACTION_OPEN = gtki.FileChooserAction(gtk.FILE_CHOOSER_ACTION_OPEN)
 	gtki.FILE_CHOOSER_ACTION_SAVE = gtki.FileChooserAction(gtk.FILE_CHOOSER_ACTION_SAVE)
 	gtki.FILE_CHOOSER_ACTION_SELECT_FOLDER = gtki.FileChooserAction(gtk.FILE_CHOOSER_ACTION_SELECT_FOLDER)
