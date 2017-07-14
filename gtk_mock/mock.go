@@ -71,19 +71,19 @@ func (*Mock) FileChooserDialogNewWith2Buttons(title string, parent gtki.Window, 
 	return nil, nil
 }
 
-func (*Mock) ImageNewFromFile(v1 string) (gtki.Image, error) {
+func (*Mock) ImageNewFromFile(filename string) (gtki.Image, error) {
 	return nil, nil
 }
 
-func (*Mock) ImageNewFromResource(v1 string) (gtki.Image, error) {
+func (*Mock) ImageNewFromResource(path string) (gtki.Image, error) {
 	return nil, nil
 }
 
-func (*Mock) ImageNewFromPixbuf(v1 gdki.Pixbuf) (gtki.Image, error) {
+func (*Mock) ImageNewFromPixbuf(gdki.Pixbuf) (gtki.Image, error) {
 	return nil, nil
 }
 
-func (*Mock) ImageNewFromIconName(v1 string, v2 gtki.IconSize) (gtki.Image, error) {
+func (*Mock) ImageNewFromIconName(name string, v2 gtki.IconSize) (gtki.Image, error) {
 	return nil, nil
 }
 
