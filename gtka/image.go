@@ -32,3 +32,7 @@ func unwrapImage(v gtki.Image) *gtk.Image {
 func (v *image) SetFromIconName(v1 string, v2 gtki.IconSize) {
 	v.internal.SetFromIconName(v1, gtk.IconSize(v2))
 }
+
+func (v *image) Clear() {
+	v.internal.Clear()
+}

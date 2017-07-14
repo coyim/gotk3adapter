@@ -5,6 +5,7 @@ type Image interface {
 	Widget
 
 	SetFromIconName(string, IconSize)
+	Clear()
 }
 
 // AssertImage asserts the Image
