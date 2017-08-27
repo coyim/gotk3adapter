@@ -8,28 +8,28 @@
 	"Deps": [
 		{
 			"ImportPath": "github.com/gotk3/gotk3/cairo",
-			"Comment": "GOTK3_0_2_0-553-gf0d5643",
-			"Rev": "f0d56430717a3c9fd7b2e91a5e3484e870a31c27"
+			"Comment": "GOTK3_0_2_0-554-g728b0d1",
+			"Rev": "728b0d1e8a4ea5f3685a32d51e89bdf7151ce913"
 		},
 		{
 			"ImportPath": "github.com/gotk3/gotk3/gdk",
-			"Comment": "GOTK3_0_2_0-553-gf0d5643",
-			"Rev": "f0d56430717a3c9fd7b2e91a5e3484e870a31c27"
+			"Comment": "GOTK3_0_2_0-554-g728b0d1",
+			"Rev": "728b0d1e8a4ea5f3685a32d51e89bdf7151ce913"
 		},
 		{
 			"ImportPath": "github.com/gotk3/gotk3/glib",
-			"Comment": "GOTK3_0_2_0-553-gf0d5643",
-			"Rev": "f0d56430717a3c9fd7b2e91a5e3484e870a31c27"
+			"Comment": "GOTK3_0_2_0-554-g728b0d1",
+			"Rev": "728b0d1e8a4ea5f3685a32d51e89bdf7151ce913"
 		},
 		{
 			"ImportPath": "github.com/gotk3/gotk3/gtk",
-			"Comment": "GOTK3_0_2_0-553-gf0d5643",
-			"Rev": "f0d56430717a3c9fd7b2e91a5e3484e870a31c27"
+			"Comment": "GOTK3_0_2_0-554-g728b0d1",
+			"Rev": "728b0d1e8a4ea5f3685a32d51e89bdf7151ce913"
 		},
 		{
 			"ImportPath": "github.com/gotk3/gotk3/pango",
-			"Comment": "GOTK3_0_2_0-553-gf0d5643",
-			"Rev": "f0d56430717a3c9fd7b2e91a5e3484e870a31c27"
+			"Comment": "GOTK3_0_2_0-554-g728b0d1",
+			"Rev": "728b0d1e8a4ea5f3685a32d51e89bdf7151ce913"
 		}
 	]
 }

@@ -1,6 +1,8 @@
 package gtki
 
-import "github.com/twstrike/gotk3adapter/gdki"
+import (
+	"github.com/twstrike/gotk3adapter/gdki"
+)
 
 type Window interface {
 	Bin
@@ -19,6 +21,8 @@ type Window interface {
 	SetTitlebar(Widget) // Since 3.10
 	SetTransientFor(Window)
 	SetUrgencyHint(bool)
+	AddMnemonic(uint, Widget)
+	RemoveMnemonic(uint, Widget)
 }
 
 func AssertWindow(_ Window) {}

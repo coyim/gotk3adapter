@@ -53,3 +53,9 @@ func (*MockWindow) SetUrgencyHint(v2 bool) {
 
 func (*MockWindow) Present() {
 }
+
+func (*MockWindow) AddMnemonic(v1 uint, v2 gtki.Widget) {
+}
+
+func (*MockWindow) RemoveMnemonic(v1 uint, v2 gtki.Widget) {
+}

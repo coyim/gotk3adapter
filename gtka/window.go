@@ -97,3 +97,11 @@ func (v *window) Unfullscreen() {
 func (v *window) SetUrgencyHint(v1 bool) {
 	v.internal.SetUrgencyHint(v1)
 }
+
+func (v *window) AddMnemonic(v1 uint, v2 gtki.Widget) {
+	v.internal.AddMnemonic(v1, unwrapWidget(v2))
+}
+
+func (v *window) RemoveMnemonic(v1 uint, v2 gtki.Widget) {
+	v.internal.RemoveMnemonic(v1, unwrapWidget(v2))
+}
