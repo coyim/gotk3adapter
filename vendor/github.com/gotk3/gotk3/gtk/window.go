@@ -611,7 +611,6 @@ func (v *Window) SetMnemonicModifier(mods gdk.ModifierType) {
 // TODO gtk_window_set_attached_to().
 // TODO gtk_window_set_default_icon_list().
 // TODO gtk_window_set_icon_list().
-// TODO gtk_window_set_mnemonic_modifier().
 // TODO gtk_window_set_screen().
 // TODO gtk_window_set_type_hint().
 // TODO gtk_window_get_resize_grip_area().
