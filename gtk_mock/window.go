@@ -1,6 +1,7 @@
 package gtk_mock
 
 import (
+	"github.com/gotk3/gotk3/gdk"
 	"github.com/twstrike/gotk3adapter/gdki"
 	"github.com/twstrike/gotk3adapter/gtki"
 )
@@ -62,4 +63,11 @@ func (*MockWindow) RemoveMnemonic(v1 uint, v2 gtki.Widget) {
 
 func (*MockWindow) ActivateMnemonic(v1 uint, v2 gdki.ModifierType) bool {
 	return true
+}
+
+func (*MockWindow) GetMnemonicModifier() gdk.ModifierType {
+	return gdk.ModifierType(gdki.GDK_SHIFT_MASK)
+}
+
+func (*MockWindow) SetMnemonicModifier(v1 gdki.ModifierType) {
 }

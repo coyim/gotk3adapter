@@ -1,6 +1,7 @@
 package gtki
 
 import (
+	"github.com/gotk3/gotk3/gdk"
 	"github.com/twstrike/gotk3adapter/gdki"
 )
 
@@ -24,6 +25,8 @@ type Window interface {
 	AddMnemonic(uint, Widget)
 	RemoveMnemonic(uint, Widget)
 	ActivateMnemonic(uint, gdki.ModifierType) bool
+	GetMnemonicModifier() gdk.ModifierType
+	SetMnemonicModifier(gdki.ModifierType)
 }
 
 func AssertWindow(_ Window) {}

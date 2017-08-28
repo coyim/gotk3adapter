@@ -110,3 +110,11 @@ func (v *window) RemoveMnemonic(v1 uint, v2 gtki.Widget) {
 func (v *window) ActivateMnemonic(v1 uint, v2 gdki.ModifierType) bool {
 	return v.internal.ActivateMnemonic(v1, gdk.ModifierType(v2))
 }
+
+func (v *window) GetMnemonicModifier() gdk.ModifierType {
+	return v.internal.GetMnemonicModifier()
+}
+
+func (v *window) SetMnemonicModifier(v1 gdki.ModifierType) {
+	v.internal.SetMnemonicModifier(gdk.ModifierType(v1))
+}
