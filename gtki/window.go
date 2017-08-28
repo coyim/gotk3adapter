@@ -23,6 +23,7 @@ type Window interface {
 	SetUrgencyHint(bool)
 	AddMnemonic(uint, Widget)
 	RemoveMnemonic(uint, Widget)
+	ActivateMnemonic(uint, gdki.ModifierType) bool
 }
 
 func AssertWindow(_ Window) {}

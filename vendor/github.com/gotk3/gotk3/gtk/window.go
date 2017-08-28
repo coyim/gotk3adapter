@@ -583,7 +583,8 @@ func (v *Window) RemoveMnemonic(keyval uint, target *Widget) {
 
 // MnemonicActivate is a wrapper around gtk_window_mnemonic_activate().
 func (v *Window) ActivateMnemonic(keyval uint, mods gdk.ModifierType) bool {
-	return C.gtk_window_mnemonic_activate(v.native(), C.uint(keyval), C.GdkModifierType(mods))
+	c := C.gtk_window_mnemonic_activate(v.native(), C.guint(keyval), C.GdkModifierType(mods))
+	return gobool(c)
 }
 
 // TODO gtk_window_begin_move_drag().

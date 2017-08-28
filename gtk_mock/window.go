@@ -59,3 +59,7 @@ func (*MockWindow) AddMnemonic(v1 uint, v2 gtki.Widget) {
 
 func (*MockWindow) RemoveMnemonic(v1 uint, v2 gtki.Widget) {
 }
+
+func (*MockWindow) ActivateMnemonic(v1 uint, v2 gdki.ModifierType) bool {
+	return true
+}
