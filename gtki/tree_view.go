@@ -8,6 +8,8 @@ type TreeView interface {
 	GetCursor() (TreePath, TreeViewColumn)
 	GetPathAtPos(int, int, TreePath, TreeViewColumn, *int, *int) bool
 	GetSelection() (TreeSelection, error)
+	SetEnableSearch(bool)
+	GetEnableSearch() bool
 }
 
 func AssertTreeView(_ TreeView) {}
