@@ -56,3 +56,11 @@ func (v *treeView) SetEnableSearch(v1 bool) {
 func (v *treeView) GetEnableSearch() bool {
 	return v.internal.GetEnableSearch()
 }
+
+func (v *treeView) SetSearchColumn(v1 int) {
+	v.internal.SetSearchColumn(v1)
+}
+
+func (v *treeView) GetSearchColumn() int {
+	return v.internal.GetSearchColumn()
+}

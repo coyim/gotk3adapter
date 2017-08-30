@@ -31,3 +31,10 @@ func (*MockTreeView) SetEnableSearch(v1 bool) {
 func (*MockTreeView) GetEnableSearch() bool {
 	return false
 }
+
+func (*MockTreeView) SetSearchColumn(v1 int) {
+}
+
+func (*MockTreeView) GetSearchColumn() int {
+	return 0
+}

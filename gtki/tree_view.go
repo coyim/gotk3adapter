@@ -10,6 +10,8 @@ type TreeView interface {
 	GetSelection() (TreeSelection, error)
 	SetEnableSearch(bool)
 	GetEnableSearch() bool
+	SetSearchColumn(int)
+	GetSearchColumn() int
 }
 
 func AssertTreeView(_ TreeView) {}
