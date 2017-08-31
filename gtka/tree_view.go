@@ -64,3 +64,11 @@ func (v *treeView) SetSearchColumn(v1 int) {
 func (v *treeView) GetSearchColumn() int {
 	return v.internal.GetSearchColumn()
 }
+
+func (v *treeView) GetSearchEntry() gtki.Entry {
+	return wrapEntrySimple(v.internal.GetSearchEntry())
+}
+
+func (v *treeView) SetSearchEntry(v1 gtki.Entry) {
+	v.internal.SetSearchEntry(unwrapEntry(v1))
+}

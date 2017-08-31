@@ -12,6 +12,8 @@ type TreeView interface {
 	GetEnableSearch() bool
 	SetSearchColumn(int)
 	GetSearchColumn() int
+	SetSearchEntry(Entry)
+	GetSearchEntry() Entry
 }
 
 func AssertTreeView(_ TreeView) {}

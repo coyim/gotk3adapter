@@ -38,3 +38,10 @@ func (*MockTreeView) SetSearchColumn(v1 int) {
 func (*MockTreeView) GetSearchColumn() int {
 	return 0
 }
+
+func (*MockTreeView) SetSearchEntry(v1 gtki.Entry) {
+}
+
+func (*MockTreeView) GetSearchEntry() gtki.Entry {
+	return nil
+}
