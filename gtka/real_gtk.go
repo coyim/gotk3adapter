@@ -138,6 +138,10 @@ func (*RealGtk) SeparatorMenuItemNew() (gtki.SeparatorMenuItem, error) {
 	return wrapSeparatorMenuItem(gtk.SeparatorMenuItemNew())
 }
 
+func (*RealGtk) SearchBarNew() (gtki.SearchBar, error) {
+	return wrapSearchBar(gtk.SearchBarNew())
+}
+
 func (*RealGtk) TextBufferNew(table gtki.TextTagTable) (gtki.TextBuffer, error) {
 	return wrapTextBuffer(gtk.TextBufferNew(unwrapTextTagTable(table)))
 }

@@ -34,6 +34,7 @@ type Gtk interface {
 	MenuItemNewWithLabel(string) (MenuItem, error)
 	MenuItemNewWithMnemonic(string) (MenuItem, error)
 	MenuNew() (Menu, error)
+	SearchBarNew() (SearchBar, error)
 	SeparatorMenuItemNew() (SeparatorMenuItem, error)
 	TextBufferNew(TextTagTable) (TextBuffer, error)
 	TextTagNew(string) (TextTag, error)

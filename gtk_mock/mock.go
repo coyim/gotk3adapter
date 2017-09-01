@@ -118,6 +118,10 @@ func (*Mock) MenuNew() (gtki.Menu, error) {
 	return nil, nil
 }
 
+func (*Mock) SearchBarNew() (gtki.SearchBar, error) {
+	return nil, nil
+}
+
 func (*Mock) SeparatorMenuItemNew() (gtki.SeparatorMenuItem, error) {
 	return nil, nil
 }
