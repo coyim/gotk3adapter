@@ -47,3 +47,7 @@ func (v *entry) SetText(v1 string) {
 func (v *entry) SetEditable(v1 bool) {
 	v.internal.SetEditable(v1)
 }
+
+func (v *entry) SetWidthChars(v1 int) {
+	v.internal.SetWidthChars(v1)
+}

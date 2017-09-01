@@ -19,3 +19,6 @@ func (*MockEntry) SetText(v1 string) {
 
 func (*MockEntry) SetEditable(v1 bool) {
 }
+
+func (*MockEntry) SetWidthChars(v1 int) {
+}

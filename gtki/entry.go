@@ -8,6 +8,7 @@ type Entry interface {
 	SetHasFrame(bool)
 	SetText(string)
 	SetVisibility(bool)
+	SetWidthChars(int)
 }
 
 func AssertEntry(_ Entry) {}
