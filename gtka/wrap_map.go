@@ -241,6 +241,12 @@ func WrapLocal(o interface{}) (interface{}, bool) {
 			return nil, true
 		}
 		return val, true
+	case *gtk.SearchEntry:
+		val := wrapSearchEntrySimple(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
 	case *gtk.SeparatorMenuItem:
 		val := wrapSeparatorMenuItemSimple(oo)
 		if val == nil {
@@ -544,6 +550,12 @@ func UnwrapLocal(o interface{}) (interface{}, bool) {
 		return val, true
 	case *searchBar:
 		val := unwrapSearchBar(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
+	case *searchEntry:
+		val := unwrapSearchEntry(oo)
 		if val == nil {
 			return nil, true
 		}

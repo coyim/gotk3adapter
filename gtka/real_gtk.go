@@ -142,6 +142,10 @@ func (*RealGtk) SearchBarNew() (gtki.SearchBar, error) {
 	return wrapSearchBar(gtk.SearchBarNew())
 }
 
+func (*RealGtk) SearchEntryNew() (gtki.SearchEntry, error) {
+	return wrapSearchEntry(gtk.SearchEntryNew())
+}
+
 func (*RealGtk) TextBufferNew(table gtki.TextTagTable) (gtki.TextBuffer, error) {
 	return wrapTextBuffer(gtk.TextBufferNew(unwrapTextTagTable(table)))
 }
