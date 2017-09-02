@@ -9,6 +9,8 @@ type Entry interface {
 	SetText(string)
 	SetVisibility(bool)
 	SetWidthChars(int)
+	GetAlignment() float32
+	SetAlignment(float32)
 }
 
 func AssertEntry(_ Entry) {}
