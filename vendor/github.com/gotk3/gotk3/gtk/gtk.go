@@ -1605,6 +1605,23 @@ func wrapBox(obj *glib.Object) *Box {
 	return &Box{Container{Widget{glib.InitiallyUnowned{obj}}}}
 }
 
+func (v *Box) toOrientable() *C.GtkOrientable {
+	if v == nil {
+		return nil
+	}
+	return C.toGtkOrientable(unsafe.Pointer(v.GObject))
+}
+
+// GetOrientation() is a wrapper around C.gtk_orientable_get_orientation() for a GtkBox
+func (v *Box) GetOrientation() Orientation {
+	return Orientation(C.gtk_orientable_get_orientation(v.toOrientable()))
+}
+
+// SetOrientation() is a wrapper around C.gtk_orientable_set_orientation() for a GtkBox
+func (v *Box) SetOrientation(o Orientation) {
+	C.gtk_orientable_set_orientation(v.toOrientable(), C.GtkOrientation(o))
+}
+
 // BoxNew() is a wrapper around gtk_box_new().
 func BoxNew(orientation Orientation, spacing int) (*Box, error) {
 	c := C.gtk_box_new(C.GtkOrientation(orientation), C.gint(spacing))
