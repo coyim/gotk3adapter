@@ -51,6 +51,10 @@ func (v *widget) SetVisible(v1 bool) {
 	v.internal.SetVisible(v1)
 }
 
+func (v *widget) IsVisible() bool {
+	return v.internal.IsVisible()
+}
+
 func (v *widget) SetName(v1 string) {
 	v.internal.SetName(v1)
 }

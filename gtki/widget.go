@@ -27,6 +27,7 @@ type Widget interface {
 	SetSensitive(bool)
 	SetSizeRequest(int, int)
 	SetVisible(bool)
+	IsVisible() bool
 	Show()
 	ShowAll()
 }

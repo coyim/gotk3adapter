@@ -19,6 +19,10 @@ func (*MockWidget) SetSensitive(v1 bool) {
 func (*MockWidget) SetVisible(v1 bool) {
 }
 
+func (*MockWidget) IsVisible() bool {
+	return false
+}
+
 func (*MockWidget) SetName(v1 string) {
 }
 
