@@ -21,8 +21,6 @@ type Widget interface {
 	SetHExpand(bool)
 	SetMarginBottom(int)
 	SetMarginTop(int)
-	SetMarginStart(int)
-	SetMarginEnd(int)
 	SetName(string)
 	SetSensitive(bool)
 	SetSizeRequest(int, int)
