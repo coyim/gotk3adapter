@@ -1,6 +1,6 @@
 package gtka
 
-import "github.com/twstrike/gotk3adapter/gtki"
+import "github.com/coyim/gotk3adapter/gtki"
 
 func init() {
 	gtki.AssertGtk(&RealGtk{})

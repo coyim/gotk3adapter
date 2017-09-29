@@ -2,7 +2,7 @@ package gliba
 
 import (
 	"github.com/gotk3/gotk3/glib"
-	"github.com/twstrike/gotk3adapter/glibi"
+	"github.com/coyim/gotk3adapter/glibi"
 )
 
 type signal struct {

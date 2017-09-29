@@ -1,9 +1,9 @@
 package gtk_mock
 
 import (
+	"github.com/coyim/gotk3adapter/gdki"
+	"github.com/coyim/gotk3adapter/gtki"
 	"github.com/gotk3/gotk3/gdk"
-	"github.com/twstrike/gotk3adapter/gdki"
-	"github.com/twstrike/gotk3adapter/gtki"
 )
 
 type MockWindow struct {

@@ -1,8 +1,8 @@
 package gdka
 
 import (
+	"github.com/coyim/gotk3adapter/gliba"
 	"github.com/gotk3/gotk3/gdk"
-	"github.com/twstrike/gotk3adapter/gliba"
 )
 
 func init() {

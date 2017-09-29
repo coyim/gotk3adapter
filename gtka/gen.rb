@@ -62,8 +62,8 @@ types.each do |tp|
 package gtka
 
 import (
+	"github.com/coyim/gotk3adapter/gtki"
 	"github.com/gotk3/gotk3/gtk"
-	"github.com/twstrike/gotk3adapter/gtki"
 )
 
 type #{ lower } struct {

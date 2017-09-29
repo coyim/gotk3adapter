@@ -1,6 +1,6 @@
 package pangoa
 
-import "github.com/twstrike/gotk3adapter/pangoi"
+import "github.com/coyim/gotk3adapter/pangoi"
 
 func init() {
 	pangoi.AssertPango(&RealPango{})

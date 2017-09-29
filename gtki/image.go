@@ -1,6 +1,6 @@
 package gtki
 
-import "github.com/twstrike/gotk3adapter/gdki"
+import "github.com/coyim/gotk3adapter/gdki"
 
 // Image is an interface of Gtk.Image
 type Image interface {

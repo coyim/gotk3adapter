@@ -1,6 +1,6 @@
 package gtki
 
-import "github.com/twstrike/gotk3adapter/gdki"
+import "github.com/coyim/gotk3adapter/gdki"
 
 type Menu interface {
 	MenuShell

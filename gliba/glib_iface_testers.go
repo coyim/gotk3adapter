@@ -1,6 +1,6 @@
 package gliba
 
-import "github.com/twstrike/gotk3adapter/glibi"
+import "github.com/coyim/gotk3adapter/glibi"
 
 func init() {
 	glibi.AssertGlib(&RealGlib{})

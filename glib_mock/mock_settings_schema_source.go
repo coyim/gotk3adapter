@@ -1,6 +1,6 @@
 package glib_mock
 
-import "github.com/twstrike/gotk3adapter/glibi"
+import "github.com/coyim/gotk3adapter/glibi"
 
 type MockSettingsSchemaSource struct {
 }

@@ -2,10 +2,10 @@ package gtka
 
 import (
 	"github.com/gotk3/gotk3/gtk"
-	"github.com/twstrike/gotk3adapter/gdka"
-	"github.com/twstrike/gotk3adapter/gdki"
-	"github.com/twstrike/gotk3adapter/gliba"
-	"github.com/twstrike/gotk3adapter/gtki"
+	"github.com/coyim/gotk3adapter/gdka"
+	"github.com/coyim/gotk3adapter/gdki"
+	"github.com/coyim/gotk3adapter/gliba"
+	"github.com/coyim/gotk3adapter/gtki"
 )
 
 type widget struct {

@@ -1,6 +1,6 @@
 package gtki
 
-import "github.com/twstrike/gotk3adapter/glibi"
+import "github.com/coyim/gotk3adapter/glibi"
 
 type TreeModel interface {
 	GetIter(TreePath) (TreeIter, error)

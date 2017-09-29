@@ -2,7 +2,7 @@ package gtka
 
 import (
 	"github.com/gotk3/gotk3/gtk"
-	"github.com/twstrike/gotk3adapter/gtki"
+	"github.com/coyim/gotk3adapter/gtki"
 )
 
 func unwrapOrientation(o gtki.Orientation) gtk.Orientation {

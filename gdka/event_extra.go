@@ -1,6 +1,6 @@
 package gdka
 
-import "github.com/twstrike/gotk3adapter/gdki"
+import "github.com/coyim/gotk3adapter/gdki"
 
 func eventCast(e gdki.Event) *event {
 	if e == nil {

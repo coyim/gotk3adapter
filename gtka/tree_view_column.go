@@ -1,7 +1,7 @@
 package gtka
 
-import "github.com/twstrike/gotk3adapter/gliba"
-import "github.com/twstrike/gotk3adapter/gtki"
+import "github.com/coyim/gotk3adapter/gliba"
+import "github.com/coyim/gotk3adapter/gtki"
 import "github.com/gotk3/gotk3/gtk"
 
 type treeViewColumn struct {

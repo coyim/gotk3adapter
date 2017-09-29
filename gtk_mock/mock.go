@@ -1,9 +1,9 @@
 package gtk_mock
 
 import (
-	"github.com/twstrike/gotk3adapter/gdki"
-	"github.com/twstrike/gotk3adapter/glibi"
-	"github.com/twstrike/gotk3adapter/gtki"
+	"github.com/coyim/gotk3adapter/gdki"
+	"github.com/coyim/gotk3adapter/glibi"
+	"github.com/coyim/gotk3adapter/gtki"
 )
 
 type Mock struct{}

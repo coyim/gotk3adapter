@@ -1,6 +1,6 @@
 package gtka
 
-import "github.com/twstrike/gotk3adapter/gtki"
+import "github.com/coyim/gotk3adapter/gtki"
 import "github.com/gotk3/gotk3/gtk"
 
 func unwrapTreeModel(s gtki.TreeModel) gtk.ITreeModel {

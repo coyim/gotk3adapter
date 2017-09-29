@@ -1,6 +1,6 @@
 package gtk_mock
 
-import "github.com/twstrike/gotk3adapter/gtki"
+import "github.com/coyim/gotk3adapter/gtki"
 
 type MockBox struct {
 	MockContainer

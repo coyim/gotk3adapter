@@ -1,6 +1,6 @@
 package pango_mock
 
-import "github.com/twstrike/gotk3adapter/pangoi"
+import "github.com/coyim/gotk3adapter/pangoi"
 
 type Mock struct{}
 

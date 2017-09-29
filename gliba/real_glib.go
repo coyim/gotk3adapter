@@ -2,7 +2,7 @@ package gliba
 
 import "github.com/gotk3/gotk3/glib"
 
-import "github.com/twstrike/gotk3adapter/glibi"
+import "github.com/coyim/gotk3adapter/glibi"
 
 type RealGlib struct{}
 

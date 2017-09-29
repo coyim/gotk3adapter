@@ -1,8 +1,8 @@
 package pangoa
 
 import (
+	"github.com/coyim/gotk3adapter/pangoi"
 	"github.com/gotk3/gotk3/pango"
-	"github.com/twstrike/gotk3adapter/pangoi"
 )
 
 type RealPango struct{}

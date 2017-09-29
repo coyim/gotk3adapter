@@ -2,9 +2,9 @@ package gtka
 
 import (
 	"github.com/gotk3/gotk3/gtk"
-	"github.com/twstrike/gotk3adapter/gliba"
-	"github.com/twstrike/gotk3adapter/glibi"
-	"github.com/twstrike/gotk3adapter/gtki"
+	"github.com/coyim/gotk3adapter/gliba"
+	"github.com/coyim/gotk3adapter/glibi"
+	"github.com/coyim/gotk3adapter/gtki"
 )
 
 type listStore struct {

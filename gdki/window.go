@@ -1,6 +1,6 @@
 package gdki
 
-import "github.com/twstrike/gotk3adapter/glibi"
+import "github.com/coyim/gotk3adapter/glibi"
 
 type Window interface {
 	glibi.Object

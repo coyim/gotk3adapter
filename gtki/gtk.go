@@ -1,8 +1,8 @@
 package gtki
 
 import (
-	"github.com/twstrike/gotk3adapter/gdki"
-	"github.com/twstrike/gotk3adapter/glibi"
+	"github.com/coyim/gotk3adapter/gdki"
+	"github.com/coyim/gotk3adapter/glibi"
 )
 
 type Gtk interface {
