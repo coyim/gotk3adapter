@@ -1,0 +1,37 @@
+{
+	"comment": "",
+	"ignore": "",
+	"package": [
+		{
+			"checksumSHA1": "Wi2/ZnLbDnAI5gBZFUCSJQyN82g=",
+			"path": "github.com/gotk3/gotk3/cairo",
+			"revision": "45e0305560e2520b2d41ecc141c5c8f791156353",
+			"revisionTime": "2017-11-11T16:40:12Z"
+		},
+		{
+			"checksumSHA1": "txZ2ZtlviKlYVmU5/gGlXp1lguc=",
+			"path": "github.com/gotk3/gotk3/gdk",
+			"revision": "45e0305560e2520b2d41ecc141c5c8f791156353",
+			"revisionTime": "2017-11-11T16:40:12Z"
+		},
+		{
+			"checksumSHA1": "0zIFtkag4jqZmbxr4hN8pyycqp0=",
+			"path": "github.com/gotk3/gotk3/glib",
+			"revision": "45e0305560e2520b2d41ecc141c5c8f791156353",
+			"revisionTime": "2017-11-11T16:40:12Z"
+		},
+		{
+			"checksumSHA1": "oSmsA1r6gKKGHQBKd93uPKO/j70=",
+			"path": "github.com/gotk3/gotk3/gtk",
+			"revision": "45e0305560e2520b2d41ecc141c5c8f791156353",
+			"revisionTime": "2017-11-11T16:40:12Z"
+		},
+		{
+			"checksumSHA1": "aLCsKWqv8/Rs8C2M8TjP9GXnaXM=",
+			"path": "github.com/gotk3/gotk3/pango",
+			"revision": "45e0305560e2520b2d41ecc141c5c8f791156353",
+			"revisionTime": "2017-11-11T16:40:12Z"
+		}
+	],
+	"rootPath": "github.com/coyim/gotk3adapter"
+}
