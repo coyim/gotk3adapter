@@ -24,6 +24,7 @@ type Window interface {
 	Resize(int, int)
 	RemoveMnemonic(uint, Widget)
 	SetApplication(Application)
+	SetDecorated(bool)
 	SetIcon(gdki.Pixbuf)
 	SetMnemonicModifier(gdki.ModifierType)
 	SetTitle(string)
