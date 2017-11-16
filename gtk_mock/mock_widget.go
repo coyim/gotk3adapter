@@ -46,6 +46,10 @@ func (*MockWidget) GetAllocatedWidth() int {
 	return 0
 }
 
+func (*MockWidget) GetParent() (gtki.Widget, error) {
+	return nil, nil
+}
+
 func (*MockWidget) GrabFocus() {
 }
 

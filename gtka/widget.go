@@ -83,6 +83,11 @@ func (v *widget) GetAllocatedWidth() int {
 	return v.internal.GetAllocatedWidth()
 }
 
+func (v *widget) GetParent() (gtki.Widget, error) {
+	parent, err := v.internal.GetParent()
+	return wrapWidget(parent, err)
+}
+
 func (v *widget) GrabFocus() {
 	v.internal.GrabFocus()
 }
