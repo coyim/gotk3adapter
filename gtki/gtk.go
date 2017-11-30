@@ -15,6 +15,7 @@ type Gtk interface {
 	BuilderNew() (Builder, error)
 	BuilderNewFromResource(string) (Builder, error)
 	CellRendererTextNew() (CellRendererText, error)
+	CheckButtonNew() (CheckButton, error)
 	CheckButtonNewWithMnemonic(string) (CheckButton, error)
 	CheckMenuItemNewWithMnemonic(string) (CheckMenuItem, error)
 	CssProviderNew() (CssProvider, error)

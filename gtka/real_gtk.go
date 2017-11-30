@@ -1,12 +1,12 @@
 package gtka
 
 import (
-	"github.com/gotk3/gotk3/glib"
-	"github.com/gotk3/gotk3/gtk"
 	"github.com/coyim/gotk3adapter/gdka"
 	"github.com/coyim/gotk3adapter/gdki"
 	"github.com/coyim/gotk3adapter/glibi"
 	"github.com/coyim/gotk3adapter/gtki"
+	"github.com/gotk3/gotk3/glib"
+	"github.com/gotk3/gotk3/gtk"
 )
 
 type RealGtk struct{}
@@ -48,6 +48,10 @@ func (*RealGtk) BuilderNewFromResource(s string) (gtki.Builder, error) {
 
 func (*RealGtk) CellRendererTextNew() (gtki.CellRendererText, error) {
 	return wrapCellRendererText(gtk.CellRendererTextNew())
+}
+
+func (*RealGtk) CheckButtonNew() (gtki.CheckButton, error) {
+	return wrapCheckButton(gtk.CheckButtonNew())
 }
 
 func (*RealGtk) CheckButtonNewWithMnemonic(label string) (gtki.CheckButton, error) {
