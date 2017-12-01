@@ -55,6 +55,10 @@ func (*Mock) CheckMenuItemNewWithMnemonic(label string) (gtki.CheckMenuItem, err
 	return nil, nil
 }
 
+func (*Mock) ComboBoxTextNew() (gtki.ComboBoxText, error) {
+	return nil, nil
+}
+
 func (*Mock) CssProviderNew() (gtki.CssProvider, error) {
 	return nil, nil
 }
