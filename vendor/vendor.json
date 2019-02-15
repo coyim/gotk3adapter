@@ -3,34 +3,34 @@
 	"ignore": "",
 	"package": [
 		{
-			"checksumSHA1": "Wi2/ZnLbDnAI5gBZFUCSJQyN82g=",
+			"checksumSHA1": "59czwfxTp/og6IEj6Rg92nI9Vwo=",
 			"path": "github.com/gotk3/gotk3/cairo",
-			"revision": "d74132d32b54abcf49ab873b0fc94e61c61317a7",
-			"revisionTime": "2017-11-28T12:21:15Z"
+			"revision": "24002f352641b933946d6532f4395efbfdb23c41",
+			"revisionTime": "2019-02-15T15:17:38Z"
 		},
 		{
-			"checksumSHA1": "txZ2ZtlviKlYVmU5/gGlXp1lguc=",
+			"checksumSHA1": "tzu8s8afau05E5ky0A1hQsetQi4=",
 			"path": "github.com/gotk3/gotk3/gdk",
-			"revision": "d74132d32b54abcf49ab873b0fc94e61c61317a7",
-			"revisionTime": "2017-11-28T12:21:15Z"
+			"revision": "24002f352641b933946d6532f4395efbfdb23c41",
+			"revisionTime": "2019-02-15T15:17:38Z"
 		},
 		{
-			"checksumSHA1": "0zIFtkag4jqZmbxr4hN8pyycqp0=",
+			"checksumSHA1": "FB0fz10h8bo9A7gfAdn+ZYBZE2w=",
 			"path": "github.com/gotk3/gotk3/glib",
-			"revision": "d74132d32b54abcf49ab873b0fc94e61c61317a7",
-			"revisionTime": "2017-11-28T12:21:15Z"
+			"revision": "24002f352641b933946d6532f4395efbfdb23c41",
+			"revisionTime": "2019-02-15T15:17:38Z"
 		},
 		{
-			"checksumSHA1": "1Ms8/kIOubQ3kW/iWL+OS/1O4bI=",
+			"checksumSHA1": "KUDo6Lx5Fr5l+Xh9yUzjyTWpZMM=",
 			"path": "github.com/gotk3/gotk3/gtk",
-			"revision": "d74132d32b54abcf49ab873b0fc94e61c61317a7",
-			"revisionTime": "2017-11-28T12:21:15Z"
+			"revision": "24002f352641b933946d6532f4395efbfdb23c41",
+			"revisionTime": "2019-02-15T15:17:38Z"
 		},
 		{
-			"checksumSHA1": "aLCsKWqv8/Rs8C2M8TjP9GXnaXM=",
+			"checksumSHA1": "jTJJ9KQ8E8KgN1KLUvA70Ig7kHc=",
 			"path": "github.com/gotk3/gotk3/pango",
-			"revision": "d74132d32b54abcf49ab873b0fc94e61c61317a7",
-			"revisionTime": "2017-11-28T12:21:15Z"
+			"revision": "24002f352641b933946d6532f4395efbfdb23c41",
+			"revisionTime": "2019-02-15T15:17:38Z"
 		}
 	],
 	"rootPath": "github.com/coyim/gotk3adapter"
