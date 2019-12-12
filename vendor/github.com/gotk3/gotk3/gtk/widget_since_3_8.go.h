@@ -16,20 +16,10 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-static GtkFlowBox *
-toGtkFlowBox(void *p)
-{
-	return (GTK_FLOW_BOX(p));
-}
+#include <stdlib.h>
 
-static GtkFlowBoxChild *
-toGtkFlowBoxChild(void *p)
-{
-	return (GTK_FLOW_BOX_CHILD(p));
-}
+extern gboolean goTickCallbacks (GtkWidget *widget, GdkFrameClock *frame_clock, gpointer user_data);
 
-static GtkPopover *
-toGtkPopover(void *p)
-{
-	return (GTK_POPOVER(p));
+static inline guint _gtk_widget_add_tick_callback(GtkWidget *widget, gpointer user_data) {
+    return gtk_widget_add_tick_callback(widget, (GtkTickCallback)(goTickCallbacks), user_data, NULL);
 }

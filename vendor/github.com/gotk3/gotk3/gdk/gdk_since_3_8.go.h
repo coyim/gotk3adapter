@@ -16,20 +16,17 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-static GtkFlowBox *
-toGtkFlowBox(void *p)
+#include <stdlib.h>
+
+// Type Casting
+static GdkFrameClock *
+toGdkFrameClock(void *p)
 {
-	return (GTK_FLOW_BOX(p));
+	return (GDK_FRAME_CLOCK(p));
 }
 
-static GtkFlowBoxChild *
-toGtkFlowBoxChild(void *p)
+static GdkFrameTimings *
+toGdkFrameTimings(void *p)
 {
-	return (GTK_FLOW_BOX_CHILD(p));
-}
-
-static GtkPopover *
-toGtkPopover(void *p)
-{
-	return (GTK_POPOVER(p));
+	return ((GdkFrameTimings*)p);
 }
