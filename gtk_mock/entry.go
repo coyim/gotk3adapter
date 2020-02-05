@@ -34,4 +34,5 @@ func (*MockEntry) SetPosition(p int) {
 }
 
 func (*MockEntry) GetPosition() int {
+	return 0
 }
