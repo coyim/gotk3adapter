@@ -15,4 +15,5 @@ func init() {
 	glibi.AssertMenu(&menu{})
 	glibi.AssertMenuItem(&menuItem{})
 	glibi.AssertMenuModel(&menuModel{})
+	glibi.AssertVariant(&variant{})
 }
