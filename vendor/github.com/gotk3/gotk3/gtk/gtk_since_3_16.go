@@ -4,7 +4,6 @@
 
 package gtk
 
-// #include <stdlib.h>
 // #include <gtk/gtk.h>
 // #include "gtk_since_3_16.go.h"
 import "C"
@@ -14,7 +13,7 @@ import (
 	"github.com/gotk3/gotk3/glib"
 )
 
-const(
+const (
 	POLICY_EXTERNAL  PolicyType = C.GTK_POLICY_EXTERNAL
 )
 
@@ -22,6 +21,7 @@ func init() {
 	tm := []glib.TypeMarshaler{
 
 		// Objects/Interfaces
+		{glib.Type(C.gtk_button_role_get_type()), marshalButtonRole},
 		{glib.Type(C.gtk_popover_menu_get_type()), marshalPopoverMenu},
 		{glib.Type(C.gtk_model_button_get_type()), marshalModelButton},
 		{glib.Type(C.gtk_stack_sidebar_get_type()), marshalStackSidebar},
@@ -38,6 +38,53 @@ func init() {
 	}
 }
 
+/*
+ * Constants
+ */
+
+// ButtonRole is a representation of GTK's GtkButtonRole.
+type ButtonRole int
+
+const (
+	BUTTON_ROLE_NORMAL ButtonRole = C.GTK_BUTTON_ROLE_NORMAL
+	BUTTON_ROLE_CHECK  ButtonRole = C.GTK_BUTTON_ROLE_CHECK
+	BUTTON_ROLE_RADIO  ButtonRole = C.GTK_BUTTON_ROLE_RADIO
+)
+
+func marshalButtonRole(p uintptr) (interface{}, error) {
+	c := C.g_value_get_enum((*C.GValue)(unsafe.Pointer(p)))
+	return ButtonRole(c), nil
+}
+
+/*
+ * GtkStack
+ */
+
+// TODO:
+// gtk_stack_set_hhomogeneous().
+// gtk_stack_get_hhomogeneous().
+// gtk_stack_set_vhomogeneous().
+// gtk_stack_get_vhomogeneous().
+
+/*
+ * GtkNotebook
+ */
+
+// TODO:
+// gtk_notebook_detach_tab().
+
+/*
+ * GtkListBox
+ */
+
+// TODO:
+// GtkListBoxCreateWidgetFunc().
+// gtk_list_box_bind_model().
+
+/*
+ * GtkScrolledWindow
+ */
+
 // SetOverlayScrolling is a wrapper around gtk_scrolled_window_set_overlay_scrolling().
 func (v *ScrolledWindow) SetOverlayScrolling(scrolling bool) {
 	C.gtk_scrolled_window_set_overlay_scrolling(v.native(), gbool(scrolling))
@@ -48,6 +95,10 @@ func (v *ScrolledWindow) GetOverlayScrolling() bool {
 	return gobool(C.gtk_scrolled_window_get_overlay_scrolling(v.native()))
 }
 
+/*
+ * GtkPaned
+ */
+
 // SetWideHandle is a wrapper around gtk_paned_set_wide_handle().
 func (v *Paned) SetWideHandle(wide bool) {
 	C.gtk_paned_set_wide_handle(v.native(), gbool(wide))
@@ -57,6 +108,10 @@ func (v *Paned) SetWideHandle(wide bool) {
 func (v *Paned) GetWideHandle() bool {
 	return gobool(C.gtk_paned_get_wide_handle(v.native()))
 }
+
+/*
+ * GtkLabel
+ */
 
 // GetXAlign is a wrapper around gtk_label_get_xalign().
 func (v *Label) GetXAlign() float64 {
@@ -198,10 +253,12 @@ func StackSidebarNew() (*StackSidebar, error) {
 	return wrapStackSidebar(glib.Take(unsafe.Pointer(c))), nil
 }
 
+// SetStack is a wrapper around gtk_stack_sidebar_set_stack().
 func (v *StackSidebar) SetStack(stack *Stack) {
 	C.gtk_stack_sidebar_set_stack(v.native(), stack.native())
 }
 
+// GetStack is a wrapper around gtk_stack_sidebar_get_stack().
 func (v *StackSidebar) GetStack() *Stack {
 	c := C.gtk_stack_sidebar_get_stack(v.native())
 	if c == nil {
@@ -210,12 +267,20 @@ func (v *StackSidebar) GetStack() *Stack {
 	return wrapStack(glib.Take(unsafe.Pointer(c)))
 }
 
+/*
+ * GtkEntry
+ */
+
 // GrabFocusWithoutSelecting is a wrapper for gtk_entry_grab_focus_without_selecting()
 func (v *Entry) GrabFocusWithoutSelecting() {
 	C.gtk_entry_grab_focus_without_selecting(v.native())
 }
 
-// InsertMarkup() is a wrapper around  gtk_text_buffer_insert_markup()
+/*
+ * GtkTextBuffer
+ */
+
+// InsertMarkup is a wrapper around  gtk_text_buffer_insert_markup()
 func (v *TextBuffer) InsertMarkup(start *TextIter, text string) {
 	cstr := C.CString(text)
 	defer C.free(unsafe.Pointer(cstr))
