@@ -2,14 +2,6 @@
 
 
 [[projects]]
-  branch = "master"
-  digest = "1:a6a872e09471d60ea2538248140472a6d9d17f139321a493f586f99b6128d0a5"
-  name = "github.com/coyim/gotk3extra"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "69f07330adeefc8a19dbf7aea1e01e1a901a7848"
-
-[[projects]]
   digest = "1:ddf66fdcdb1ec703fa6316f0735dc287290f6e0123037f59972f5fe9202e09d4"
   name = "github.com/gotk3/gotk3"
   packages = [
@@ -27,11 +19,9 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
-    "github.com/coyim/gotk3extra",
     "github.com/gotk3/gotk3/gdk",
     "github.com/gotk3/gotk3/glib",
     "github.com/gotk3/gotk3/gtk",
-    "github.com/gotk3/gotk3/pango",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1
