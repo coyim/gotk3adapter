@@ -91,6 +91,10 @@ func (*Mock) ButtonBoxNew(gtki.Orientation) (gtki.ButtonBox, error) {
 	return nil, nil
 }
 
+func (*Mock) PopoverNew(gtki.Widget) (gtki.Popover, error) {
+	return nil, nil
+}
+
 func (*Mock) BoxNew(gtki.Orientation, int) (gtki.Box, error) {
 	return nil, nil
 }
