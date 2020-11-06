@@ -54,6 +54,7 @@ type Gtk interface {
 	TextViewNew() (TextView, error)
 	TreePathNew() TreePath
 	SpinnerNew() (Spinner, error)
+	BoxNew(Orientation, int) (Box, error)
 	WindowSetDefaultIcon(gdki.Pixbuf)
 	SettingsGetDefault() (Settings, error)
 
