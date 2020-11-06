@@ -223,6 +223,12 @@ func WrapLocal(o interface{}) (interface{}, bool) {
 			return nil, true
 		}
 		return val, true
+	case *gtk.MenuButton:
+		val := WrapMenuButtonSimple(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
 	case *gtk.MenuShell:
 		val := WrapMenuShellSimple(oo)
 		if val == nil {
@@ -574,6 +580,12 @@ func UnwrapLocal(o interface{}) (interface{}, bool) {
 		return val, true
 	case *menuItem:
 		val := UnwrapMenuItem(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
+	case *menuButton:
+		val := UnwrapMenuButton(oo)
 		if val == nil {
 			return nil, true
 		}
