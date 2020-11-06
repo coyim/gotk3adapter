@@ -57,6 +57,7 @@ type Gtk interface {
 	BoxNew(Orientation, int) (Box, error)
 	WindowSetDefaultIcon(gdki.Pixbuf)
 	SettingsGetDefault() (Settings, error)
+	SeparatorNew(Orientation) (Separator, error)
 
 	StatusIconNew() (StatusIcon, error)
 	StatusIconNewFromFile(filename string) (StatusIcon, error)
