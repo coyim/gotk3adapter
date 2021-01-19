@@ -30,5 +30,5 @@
   unused-packages = true
 
 [[constraint]]
-  branch = "master"
+  branch = "main"
   name = "github.com/coyim/gotk3extra"

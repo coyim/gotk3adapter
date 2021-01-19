@@ -2,12 +2,12 @@
 
 
 [[projects]]
-  branch = "master"
-  digest = "1:22d1920e94eb1d36bd89bdf068f44a4aedce8f8ef0b53c3ef401fc96de03871d"
+  branch = "main"
+  digest = "1:e9822b295aff79d1d2e915450a468d02c87cfcfff2a670ab558b04a1afc623d9"
   name = "github.com/coyim/gotk3extra"
   packages = ["."]
   pruneopts = "UT"
-  revision = "c78695e4a2b907377c504cd2b91f8d45f993b767"
+  revision = "d975ee531b7f781abfc15e3b37b241030bcffbcb"
 
 [[projects]]
   digest = "1:ddf66fdcdb1ec703fa6316f0735dc287290f6e0123037f59972f5fe9202e09d4"
