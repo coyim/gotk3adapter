@@ -26,5 +26,5 @@ func GetParent(v *gtk.Widget) (gtk.IWidget, error) {
 	if c == nil {
 		return nil, nilPtrErr
 	}
-	return castWidget(c)
+	return CastWidget(c)
 }

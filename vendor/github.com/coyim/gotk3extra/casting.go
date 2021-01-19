@@ -4,6 +4,7 @@ package gotk3extra
 // #include <stdlib.h>
 // #include <gtk/gtk.h>
 // #include "casting.go.h"
+// #include "widget.go.h"
 // #cgo CFLAGS: -Wno-deprecated-declarations
 import "C"
 import (
@@ -17,10 +18,11 @@ import (
 )
 
 // Code in this file is lightly adapted from gotk3 to make it available for use in this package
-// castInternal casts the given object to the appropriate Go struct, but returns it as interface for later type assertions.
+
+// CastInternal casts the given object to the appropriate Go struct, but returns it as interface for later type assertions.
 // The className is the results of C.object_get_class_name(c) called on the native object.
 // The obj is the result of glib.Take(unsafe.Pointer(c)), used as a parameter for the wrapper functions.
-func castInternal(className string, obj *glib.Object) (interface{}, error) {
+func CastInternal(className string, obj *glib.Object) (interface{}, error) {
 	fn, ok := gtk.WrapMap[className]
 	if !ok {
 		return nil, errors.New("unrecognized class name '" + className + "'")
@@ -51,14 +53,19 @@ func castInternal(className string, obj *glib.Object) (interface{}, error) {
 	return rv[0].Interface(), nil
 }
 
-// cast takes a native GObject and casts it to the appropriate Go struct.
-func cast(c *C.GObject) (glib.IObject, error) {
+// CastX takes a native GObject and casts it to the appropriate Go struct.
+func CastX(c unsafe.Pointer) (glib.IObject, error) {
+	return Cast(C.toGObject(c))
+}
+
+// Cast takes a native GObject and casts it to the appropriate Go struct.
+func Cast(c *C.GObject) (glib.IObject, error) {
 	var (
 		className = goString(C.object_get_class_name(c))
 		obj       = glib.Take(unsafe.Pointer(c))
 	)
 
-	intf, err := castInternal(className, obj)
+	intf, err := CastInternal(className, obj)
 	if err != nil {
 		return nil, err
 	}
@@ -75,14 +82,19 @@ func goString(cstr *C.gchar) string {
 	return C.GoString((*C.char)(cstr))
 }
 
-// cast takes a native GtkWidget and casts it to the appropriate Go struct.
-func castWidget(c *C.GtkWidget) (gtk.IWidget, error) {
+// CastWidgetX takes a native GtkWidget and casts it to the appropriate Go struct.
+func CastWidgetX(c unsafe.Pointer) (gtk.IWidget, error) {
+	return CastWidget(C.toGtkWidget(c))
+}
+
+// CastWidget takes a native GtkWidget and casts it to the appropriate Go struct.
+func CastWidget(c *C.GtkWidget) (gtk.IWidget, error) {
 	var (
 		className = goString((C.object_get_class_name(C.toGObject(unsafe.Pointer(c)))))
 		obj       = glib.Take(unsafe.Pointer(c))
 	)
 
-	intf, err := castInternal(className, obj)
+	intf, err := CastInternal(className, obj)
 	if err != nil {
 		return nil, err
 	}
