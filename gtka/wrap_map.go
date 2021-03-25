@@ -80,6 +80,12 @@ func WrapLocal(o interface{}) (interface{}, bool) {
 			return nil, true
 		}
 		return val, true
+	case *gtk.ListBoxRow:
+		val := WrapListBoxRowSimple(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
 	case *gtk.Button:
 		val := WrapButtonSimple(oo)
 		if val == nil {
@@ -467,6 +473,18 @@ func UnwrapLocal(o interface{}) (interface{}, bool) {
 		return val, true
 	case *box:
 		val := UnwrapBox(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
+	case *listBox:
+		val := UnwrapListBox(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
+	case *listBoxRow:
+		val := UnwrapListBoxRow(oo)
 		if val == nil {
 			return nil, true
 		}
