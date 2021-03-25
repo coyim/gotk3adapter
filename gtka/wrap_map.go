@@ -74,6 +74,12 @@ func WrapLocal(o interface{}) (interface{}, bool) {
 			return nil, true
 		}
 		return val, true
+	case *gtk.ListBox:
+		val := WrapListBoxSimple(oo)
+		if val == nil {
+			return nil, true
+		}
+		return val, true
 	case *gtk.Button:
 		val := WrapButtonSimple(oo)
 		if val == nil {
