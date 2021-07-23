@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        go: [ '1.15', '1.14', '1.13', '1.12', '1.11' ]
+        go: [ '1.15', '1.14', '1.13' ]
 
     name: Test go-${{ matrix.go }} (Linux)
     steps:
@@ -30,7 +30,7 @@ jobs:
         with:
           go-version: ${{ matrix.go }}
       - name: build
-        run: go build ./...
+        run: make
 
   notify-test:
     name: Notify on success or failure of test
