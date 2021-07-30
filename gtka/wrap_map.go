@@ -477,7 +477,7 @@ func UnwrapLocal(o interface{}) (interface{}, bool) {
 			return nil, true
 		}
 		return val, true
-	case *assistant:
+	case *sizeGroup:
 		val := UnwrapSizeGroup(oo)
 		if val == nil {
 			return nil, true
