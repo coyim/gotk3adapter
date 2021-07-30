@@ -105,3 +105,6 @@ func (*Mock) SimpleActionNewStateful(name string, parameterType glibi.VariantTyp
 func (*Mock) PropertyActionNew(name string, object glibi.Object, propertyName string) glibi.PropertyAction {
 	return nil
 }
+
+func (*Mock) SetFinalizerStrategy(func(func())) {
+}

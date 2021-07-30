@@ -112,3 +112,9 @@ func (*RealGlib) SimpleActionNewStateful(name string, parameterType glibi.Varian
 func (*RealGlib) PropertyActionNew(name string, object glibi.Object, propertyName string) glibi.PropertyAction {
 	return WrapPropertyAction(glib.PropertyActionNew(name, UnwrapObject(object), propertyName))
 }
+
+func (*RealGlib) SetFinalizerStrategy(f func(func())) {
+	glib.FinalizerStrategy = func(ff glib.Finalizer) {
+		f(ff)
+	}
+}

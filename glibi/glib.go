@@ -33,6 +33,8 @@ type Glib interface {
 	SimpleActionNew(name string, parameterType VariantType) SimpleAction
 	SimpleActionNewStateful(name string, parameterType VariantType, state Variant) SimpleAction
 	PropertyActionNew(name string, object Object, propertyName string) PropertyAction
+
+	SetFinalizerStrategy(func(func()))
 } // end of Glib
 
 func AssertGlib(_ Glib) {}
