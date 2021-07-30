@@ -2,6 +2,8 @@ package glibi
 
 type Glib interface {
 	IdleAdd(interface{}) SourceHandle
+	TimeoutAdd(uint, interface{}) SourceHandle
+	TimeoutSecondsAdd(uint, interface{}) SourceHandle
 	InitI18n(string, string)
 	Local(string) string
 	MainDepth() int

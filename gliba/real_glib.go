@@ -13,6 +13,16 @@ func (*RealGlib) IdleAdd(f interface{}) glibi.SourceHandle {
 	return glibi.SourceHandle(res)
 }
 
+func (*RealGlib) TimeoutAdd(milliseconds uint, f interface{}) glibi.SourceHandle {
+	res := glib.TimeoutAdd(milliseconds, f)
+	return glibi.SourceHandle(res)
+}
+
+func (*RealGlib) TimeoutSecondsAdd(seconds uint, f interface{}) glibi.SourceHandle {
+	res := glib.TimeoutSecondsAdd(seconds, f)
+	return glibi.SourceHandle(res)
+}
+
 func (*RealGlib) InitI18n(domain string, dir string) {
 	glib.InitI18n(domain, dir)
 }
