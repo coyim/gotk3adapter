@@ -7,7 +7,7 @@ import (
 	"github.com/gotk3/gotk3/gtk"
 )
 
-const toggleButtonName = "button"
+const comboBoxToggleButtonName = "button"
 
 type comboBox struct {
 	*bin
@@ -69,7 +69,7 @@ func (v *comboBox) SetEntryTextColumn(v1 int) {
 }
 
 func (v *comboBox) GetToggleButton() (gtki.Button, error) {
-	obj, err := v.TemplateChild(toggleButtonName)
+	obj, err := v.TemplateChild(comboBoxToggleButtonName)
 	if err == nil {
 		b := WrapButtonSimple(gotk3extra.WrapButton(gliba.UnwrapObject(obj)))
 
