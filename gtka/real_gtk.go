@@ -235,3 +235,7 @@ func (*RealGtk) StatusIconNewFromIconName(iconName string) (gtki.StatusIcon, err
 func (*RealGtk) StatusIconNewFromPixbuf(pixbuf gdki.Pixbuf) (gtki.StatusIcon, error) {
 	return WrapStatusIcon(gotk3extra.StatusIconNewFromPixbuf(gdka.UnwrapPixbuf(pixbuf)))
 }
+
+func (*RealGtk) WindowNew(wt gtki.WindowType) (gtki.Window, error) {
+	return WrapWindow(gtk.WindowNew(gtk.WindowType(wt)))
+}

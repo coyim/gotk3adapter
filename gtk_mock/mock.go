@@ -247,3 +247,7 @@ func (*Mock) InfoBarSetRevealed(infobar gtki.InfoBar, setting bool) {
 func (*Mock) InfoBarGetRevealed(infobar gtki.InfoBar) bool {
 	return false
 }
+
+func (*Mock) WindowNew(wt gtki.WindowType) (gtki.Window, error) {
+	return nil, nil
+}
