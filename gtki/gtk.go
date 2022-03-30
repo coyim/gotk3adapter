@@ -3,7 +3,6 @@ package gtki
 import (
 	"github.com/coyim/gotk3adapter/gdki"
 	"github.com/coyim/gotk3adapter/glibi"
-	"github.com/coyim/gotk3adapter/gtki"
 )
 
 type Gtk interface {
@@ -62,7 +61,7 @@ type Gtk interface {
 	SettingsGetDefault() (Settings, error)
 	SeparatorNew(Orientation) (Separator, error)
 	EntryCompletionNew() (EntryCompletion, error)
-	WindowNew(WindowType) (gtki.Window, error)
+	WindowNew(WindowType) (Window, error)
 
 	StatusIconNew() (StatusIcon, error)
 	StatusIconNewFromFile(filename string) (StatusIcon, error)
