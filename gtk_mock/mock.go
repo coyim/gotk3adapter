@@ -27,6 +27,10 @@ func (*Mock) ApplicationNew(appId string, flags glibi.ApplicationFlags) (gtki.Ap
 	return nil, nil
 }
 
+func (*Mock) ApplicationWindowNew(glibi.Application) (gtki.ApplicationWindow, error) {
+	return nil, nil
+}
+
 func (*Mock) AssistantNew() (gtki.Assistant, error) {
 	return nil, nil
 }
