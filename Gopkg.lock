@@ -11,11 +11,12 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:5173b3e86a1528977b16d06cdaa4a7f58c2e2841ea888290ffd005c6df6140fe"
+  digest = "1:e35e80eb3d29a45af1361ff7bebf0b6e0c4e2c3874d5a6388295553194889bae"
   name = "github.com/gotk3/gotk3"
   packages = [
     "cairo",
     "gdk",
+    "gio",
     "glib",
     "gtk",
     "internal/callback",
@@ -32,6 +33,7 @@
   input-imports = [
     "github.com/coyim/gotk3extra",
     "github.com/gotk3/gotk3/gdk",
+    "github.com/gotk3/gotk3/gio",
     "github.com/gotk3/gotk3/glib",
     "github.com/gotk3/gotk3/gtk",
     "github.com/gotk3/gotk3/pango",

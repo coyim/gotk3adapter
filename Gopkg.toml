@@ -32,3 +32,7 @@
 [[constraint]]
   branch = "main"
   name = "github.com/coyim/gotk3extra"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/gotk3/gotk3"
