@@ -255,3 +255,15 @@ func (*Mock) InfoBarGetRevealed(infobar gtki.InfoBar) bool {
 func (*Mock) WindowNew(wt gtki.WindowType) (gtki.Window, error) {
 	return nil, nil
 }
+
+func (*Mock) IconThemeNew() (gtki.IconTheme, error) {
+	return nil, nil
+}
+
+func (*Mock) IconThemeGetDefault() gtki.IconTheme {
+	return nil
+}
+
+func (*Mock) IconThemeGetForScreen(s gdki.Screen) gtki.IconTheme {
+	return nil
+}

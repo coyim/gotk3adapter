@@ -33,6 +33,9 @@ type Gtk interface {
 	GetMajorVersion() uint
 	GetMinorVersion() uint
 	GetMicroVersion() uint
+	IconThemeNew() (IconTheme, error)
+	IconThemeGetDefault() IconTheme
+	IconThemeGetForScreen(gdki.Screen) IconTheme
 	ImageNewFromFile(string) (Image, error)
 	ImageNewFromResource(string) (Image, error)
 	ImageNewFromPixbuf(gdki.Pixbuf) (Image, error)

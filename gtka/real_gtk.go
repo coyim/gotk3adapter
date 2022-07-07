@@ -243,3 +243,15 @@ func (*RealGtk) StatusIconNewFromPixbuf(pixbuf gdki.Pixbuf) (gtki.StatusIcon, er
 func (*RealGtk) WindowNew(wt gtki.WindowType) (gtki.Window, error) {
 	return WrapWindow(gtk.WindowNew(gtk.WindowType(wt)))
 }
+
+func (*RealGtk) IconThemeNew() (gtki.IconTheme, error) {
+	return WrapIconTheme(gotk3extra.IconThemeNew())
+}
+
+func (*RealGtk) IconThemeGetDefault() gtki.IconTheme {
+	return WrapIconThemeSimple(gotk3extra.IconThemeGetDefault())
+}
+
+func (*RealGtk) IconThemeGetForScreen(s gdki.Screen) gtki.IconTheme {
+	return WrapIconThemeSimple(gotk3extra.IconThemeGetForScreen(gdka.UnwrapScreen(s)))
+}
