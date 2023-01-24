@@ -1,0 +1,4 @@
+github.com/coyim/gotk3extra v0.0.0-20220706184944-5697a72a84a2 h1:bK4Y+DZzvhiE6oZStY5xRW7URS3A+8vFnTuo563gNBM=
+github.com/coyim/gotk3extra v0.0.0-20220706184944-5697a72a84a2/go.mod h1:Nn1D/Zd6ivBvKkL1Lts7fYAAMBKIOqAwTNDbhDJeHok=
+github.com/gotk3/gotk3 v0.6.2-0.20210910212249-bae3fb677ee0 h1:+orIQ4++5GihgwVNTfhBgNqCHYNlCmS683OIFhQDOkc=
+github.com/gotk3/gotk3 v0.6.2-0.20210910212249-bae3fb677ee0/go.mod h1:/hqFpkNa9T3JgNAE2fLvCdov7c5bw//FHNZrZ3Uv9/Q=

@@ -29,8 +29,6 @@ TAGS := -tags $(GLIB_BUILD_TAG),$(GTK_BUILD_TAG),$(PANGO_BUILD_TAG),$(CAIRO_BUIL
 GO := go
 GOBUILD := $(GO) build
 
-export GO111MODULE=off
-
 default: build
 
 build:
