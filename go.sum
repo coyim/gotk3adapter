@@ -1,10 +1,4 @@
-github.com/coyim/gotk3extra v0.0.0-20220706184944-5697a72a84a2 h1:bK4Y+DZzvhiE6oZStY5xRW7URS3A+8vFnTuo563gNBM=
-github.com/coyim/gotk3extra v0.0.0-20220706184944-5697a72a84a2/go.mod h1:Nn1D/Zd6ivBvKkL1Lts7fYAAMBKIOqAwTNDbhDJeHok=
-github.com/coyim/gotk3extra v0.0.0-20230124171643-ecb0d8cd94b3 h1:VBrpkS7pcJn3w+OV0PgVRuGmiM9JnQbtcc62lv7N+4M=
-github.com/coyim/gotk3extra v0.0.0-20230124171643-ecb0d8cd94b3/go.mod h1:sLgfe77R0fsgbMYlPx85RUkkr4l6DPD2GA5BNjshHyA=
-github.com/coyim/gotk3extra v0.0.1 h1:lTTD76e4wZA9n9uktQVzs3/OA0PLNkFcs/or9Auzwmk=
-github.com/coyim/gotk3extra v0.0.1/go.mod h1:W1H9cAbTYeQjtVIGP4+LuBZHlcEMJ0mxNdG2bsSa7PM=
-github.com/gotk3/gotk3 v0.6.2-0.20210910212249-bae3fb677ee0 h1:+orIQ4++5GihgwVNTfhBgNqCHYNlCmS683OIFhQDOkc=
-github.com/gotk3/gotk3 v0.6.2-0.20210910212249-bae3fb677ee0/go.mod h1:/hqFpkNa9T3JgNAE2fLvCdov7c5bw//FHNZrZ3Uv9/Q=
-github.com/gotk3/gotk3 v0.6.2-0.20220918105832-655547b6cbbc h1:SWKI/OYL5FuleAef26ZC11tDfD+W+wugKNh8x745GUA=
-github.com/gotk3/gotk3 v0.6.2-0.20220918105832-655547b6cbbc/go.mod h1:/hqFpkNa9T3JgNAE2fLvCdov7c5bw//FHNZrZ3Uv9/Q=
+github.com/coyim/gotk3extra v0.0.2 h1:LmgwTxEICcdpmm5m15Zg+hyhKu65hnSDJwO0XK63iww=
+github.com/coyim/gotk3extra v0.0.2/go.mod h1:FKShTL6WkYgaA3M+dFjmEYsNskwYYQDTyIRCGuRAbaA=
+github.com/gotk3/gotk3 v0.6.2 h1:sx/PjaKfKULJPTPq8p2kn2ZbcNFxpOJqi4VLzMbEOO8=
+github.com/gotk3/gotk3 v0.6.2/go.mod h1:/hqFpkNa9T3JgNAE2fLvCdov7c5bw//FHNZrZ3Uv9/Q=
