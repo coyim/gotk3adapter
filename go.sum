@@ -1,4 +1,12 @@
+github.com/awnumar/memcall v0.5.0 h1:31zYqzH08fM1UBzr53ywXFvqVP4grhAIFFd1Pfd7Gtk=
+github.com/awnumar/memcall v0.5.0/go.mod h1:5q5zKsL4XfYgqzCQEvUt9Dou4fEXWsn+tNrm1z1oYgQ=
+github.com/coyim/constbn v0.0.0-20251201142907-b19b950d1e1c h1:BiTh0vhGQV4TVf/+4DkRMTtffspaexqhqSDaOHdffrc=
+github.com/coyim/constbn v0.0.0-20251201142907-b19b950d1e1c/go.mod h1:DUKCup960vjCJVFhoDMGvsnmEmpMs9fGP6jSCcP7eIU=
 github.com/coyim/gotk3extra v0.0.2 h1:LmgwTxEICcdpmm5m15Zg+hyhKu65hnSDJwO0XK63iww=
 github.com/coyim/gotk3extra v0.0.2/go.mod h1:FKShTL6WkYgaA3M+dFjmEYsNskwYYQDTyIRCGuRAbaA=
+github.com/coyim/otr3 v0.0.0-20251201151835-9faf51166271 h1:WUo45d2bKOmfVoUcxqXU3j24tA2NT4GwdNdTe/F77uQ=
+github.com/coyim/otr3 v0.0.0-20251201151835-9faf51166271/go.mod h1:cEC1vJFaN8Vc4J8SCrDworb7cL6XLSSNcm6mP51kTQQ=
 github.com/gotk3/gotk3 v0.6.2 h1:sx/PjaKfKULJPTPq8p2kn2ZbcNFxpOJqi4VLzMbEOO8=
 github.com/gotk3/gotk3 v0.6.2/go.mod h1:/hqFpkNa9T3JgNAE2fLvCdov7c5bw//FHNZrZ3Uv9/Q=
+golang.org/x/sys v0.35.0 h1:vz1N37gP5bs89s7He8XuIYXpyY0+QlsKmzipCbUtyxI=
+golang.org/x/sys v0.35.0/go.mod h1:BJP2sWEmIv4KK5OTEluFJCKSidICx8ciO85XgH3Ak8k=
